@@ -78,6 +78,20 @@
   animation-duration: 1s;
 }
 
+@keyframes slide-up {
+  from {
+    margin-bottom: -5rem;
+  }
+  to {
+    margin-bottom: 0rem;
+  }
+}
+
+.slide-up {
+  animation-name: slide-up;
+  animation-duration: 1s;
+}
+
 
 
 /****************** LISTS ******************/
@@ -274,6 +288,35 @@ label, p, h, li, a {
   text-decoration: underline;
 }
 
+.name {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.name label {
+  display: flex;
+  padding: 0;
+  height: 5.3rem;
+}
+
+.container {
+  display: flex;
+}
+
+.container > .segment {
+  position: relative;
+}
+
+.container > .segment > .placeholder {
+  color: transparent;
+}
+
+.container > .segment > .scroll {
+  position: absolute;
+  top: 0;
+}
+
 
 /****************** CONTENT ******************/
 
@@ -448,26 +491,56 @@ label, p, h, li, a {
   position: relative;
 }
 
+.scroll > .up,
+.scroll > .down,
+.scroll > .left,
 .scroll > .right {
   background: var(--darker);
   position: absolute;
   width: 100%;
   height: 100%;
 
-  animation-name: right;
-  animation-duration: 2s;
-  transform: translateX(50%) scale(0, 1);
+  animation-fill-mode: forwards;
+}
+
+.scroll > .up {
+  animation-name: up;
+}
+
+.scroll > .down {
+  animation-name: down;
+}
+
+.scroll > .left {
+  animation-name: left;
+}
+
+.scroll > .right {
+  animation-name: right
+}
+
+
+
+
+@keyframes up {
+  from { transform: translateY(0%) scale(1,1); }
+  to { transform: translateY(-50%) scale(1,0); }
+}
+
+@keyframes down {
+  from { transform: translateY(0%) scale(1,1); }
+  to { transform: translateY(50%) scale(1,0); }
+}
+
+@keyframes left {
+  from { transform: translateX(0%) scale(1,1); }
+  to { transform: translateX(-50%) scale(0,1); }
 }
 
 @keyframes right {
-  from {
-    transform: translateX(0%) scale(1,1);
-  }
-  to {
-    transform: translateX(50%) scale(0,1);
-  }
+  from { transform: translateX(0%) scale(1,1); }
+  to { transform: translateX(50%) scale(0,1); }
 }
-
 
 
 
