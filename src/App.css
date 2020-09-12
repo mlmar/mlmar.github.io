@@ -1,38 +1,39 @@
-.App {
-  text-align: center;
+/* lato-regular - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./css/fonts/Lato/lato-v16-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Lato Regular'), local('Lato-Regular'),
+       url('./css/fonts/Lato/lato-v16-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./css/fonts/Lato/lato-v16-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./css/fonts/Lato/lato-v16-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('./css/fonts/Lato/lato-v16-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./css/fonts/Lato/lato-v16-latin-regular.svg#Lato') format('svg'); /* Legacy iOS */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  font-family: Lato !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+html, body, #root, .App {
   display: flex;
+  height: 100%;
+  width: 100%;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: var(--lighter);
 }
 
-.App-link {
-  color: #61dafb;
-}
+.App *, .App *:before, .App *:after {
+  margin: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  transition: 
+    background .5s ease,
+    color .5s ease,
+    padding .5s ease,
+    margin .5s ease,
+    border .5s ease,
+    opacity .5s ease;
 }

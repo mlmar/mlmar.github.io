@@ -1,0 +1,519 @@
+:root {
+  --dark: #212121;
+  --darker: #141414;
+  --light: #ececec;
+  --lighter: #efefef;
+
+  --highlight: #6868af;
+  --hover: #c2c0ce;
+}
+
+
+
+/****************** SCROLLBAR ******************/
+
+::-webkit-scrollbar {
+  width: .5rem;
+  height: .5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #e6e6e6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #737373;
+}
+
+
+/****************** ANIMATION ******************/
+
+@keyframes slide {
+  from {
+    margin-left: -10rem;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+.slide, .slide-1, .slide-2 { animation-name: slide; }
+.slide { animation-duration: .5s; }
+.slide-1 { animation-duration: 1s; }
+.slide-2 { animation-duration: 1.5s; }
+
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade, .fade-1, .fade-2,  .fade-fast { animation-name: fade; }
+.fade { animation-duration: .5s; }
+.fade-1 { animation-duration: 1s; }
+.fade-2 { animation-duration: 1.5s; }
+.fade-fast { animation-duration: .2s }
+
+
+
+@keyframes slide-down {
+  from {
+    margin-top: -2rem;
+  }
+  to {
+    margin-top: 0;
+  }
+}
+
+.slide-down {
+  animation-name: slide-down;
+  animation-duration: 1s;
+}
+
+
+
+/****************** LISTS ******************/
+
+ul.points {
+  list-style-type: circle;
+}
+
+/****************** LINKS ******************/
+
+a, .highlight {
+  color: var(--highlight) !important;
+}
+
+a *, button {
+  cursor: pointer !important;
+}
+
+a[href] {
+  text-decoration: none;
+}
+
+a:visited {
+  color: unset;
+}
+
+/****************** BUTTONS ******************/
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 2rem;
+  min-width: min-content;
+  width: 4rem;
+
+  color: var(--darker);
+  background: var(--light);
+
+  border: none;
+  border-radius: .2rem;
+
+  font-size: .8rem;
+  font-weight: bold;
+
+  outline: none !important;
+  transition: all .3s ease !important;
+
+  padding: .2rem 1rem .2rem 1rem;
+}
+
+button:hover {
+  background: var(--hover);
+}
+
+button:active, button:after {
+  background: gray;
+}
+
+button.green                              { background: #39ca63; }
+button.green:hover                        { background: #2cab52; }
+button.green:active, button.green:after   { background: #038803; }
+
+button.blue                               { background: #5cc3fb; }
+button.blue:hover                         { background: #43a6dc; }
+button.blue:active, button.blue:after     { background: #2486bb; }
+
+button.yellow                             { background: #ffde43; }
+button.yellow:hover                       { background: #d6b827; }
+button.yellow:active, button.yellow:after { background: #caac22; }
+
+button img {
+  max-width: 75%;
+  height: auto;
+}
+
+button img.first {
+  padding-right: .2rem;
+}
+
+button img.last {
+  padding-left: .2rem;
+}
+
+/****************** LABELS ******************/
+
+label, p, h, li, a {
+  padding: .2rem 0rem .2rem 0rem;
+  word-spacing: .1em;
+  letter-spacing: normal;
+  color: var(--darker);
+}
+
+.title {
+  font-size: 5rem;
+}
+
+.large {
+  font-size: 4rem;
+}
+
+.medium {
+  font-size: 1.4rem;
+}
+
+.small {
+  font-size: 1rem;
+}
+
+.bold {
+  font-weight: 600;  
+}
+
+.italic {
+  font-style: italic;
+}
+
+.center {
+  text-align: center;
+}
+
+
+/****************** DIV LAYOUTS ******************/
+
+.space {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex > .right {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+}
+
+.gap > * {
+  margin: .5rem;
+}
+
+.min-width {
+  width: min-content !important;
+}
+
+.max-width {
+  width: 100% !important;
+}
+
+.halves {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/****************** LAYOUT ******************/
+
+.main {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  background: var(--lighter);
+}
+
+
+/****************** HEADER ******************/
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40vw;
+  padding: 2rem;
+
+  background: var(--darker);
+
+  z-index: 10;
+}
+
+.header > .item {
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  align-self: center;
+}
+
+.header label {
+  color: var(--lighter);
+}
+
+.header > .item > a:hover {
+  text-decoration: underline;
+}
+
+
+/****************** CONTENT ******************/
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  overflow: auto;
+  background: var(--lighter);
+  align-items: center;
+}
+
+.content > .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35vw;
+}
+
+.content > .wrapper > * {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  width: 100%;
+}
+
+
+
+
+/****************** MODULES ******************/
+
+.education > .item,
+.projects > .item {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0rem 1rem 0rem;
+}
+
+/****************** PROJECTS ******************/
+
+.projects > .item .medium {
+  align-items: center;
+}
+
+.button-panel {
+  display: flex;
+  align-items: center;
+}
+
+.button-panel button:not(:last-child),
+.button-panel a:not(:last-child) {
+  margin-right: .4rem;
+}
+
+
+/****************** DEMO ******************/
+
+.demo {
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  top: 5rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  background: var(--lighter);
+
+  box-shadow: 0px 0px 6px 1px rgb(0 0 0 / 50%);
+  z-index: 99;
+}
+
+.demo > .bar {
+  display: flex;
+}
+
+.demo > .bar > label {
+  padding: 0rem 0rem 0rem .2rem;
+}
+
+.demo > .bar > button:last-child {
+  height: fit-content !important;
+  width: fit-content !important;
+  padding: .2rem 1rem .2rem 1rem;
+  border-radius: initial;
+}
+
+.demo > .item {
+  width: 75vw;
+  max-height: 75vh;
+  overflow: auto;
+  overflow-x: hidden;
+  margin-bottom: .5rem;
+}
+
+/****************** DROPDOWN ******************/
+
+.dropdown {
+  width: fit-content;
+}
+
+.dropdown > label:first-child {
+  cursor: pointer;
+  color: var(--highlight);
+  position: relative;
+}
+
+.dropdown > label:first-child:hover {
+  text-decoration: underline;
+}
+
+.dropdown > label:first-child:hover::after {
+  padding-left: .2rem;
+  font-size: 90%;
+  content: "\296E";
+  position: absolute;
+  top: .35rem;
+}
+
+.dropdown > .item {
+  overflow: hidden;
+}
+
+.dropdown > .item > * {
+  animation-name: slide-down;
+  animation-duration: .4s;
+}
+
+.dropdown > .item.reverse > * {
+  margin-bottom: -4rem;
+  transition: margin-bottom .8s;
+}
+
+
+
+.education > .item .major {
+  display: flex;
+  flex-direction: column;
+}
+
+.education > .item .courses {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.education .course {
+  display: flex;
+  flex-direction: column;
+  padding: .2rem 1rem 0rem .5rem;
+}
+
+.education .course .languages {
+  padding: 0;
+}
+
+
+
+
+
+
+
+
+/****************** SCROLL ******************/
+
+.scroll {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.scroll > .right {
+  background: var(--darker);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  animation-name: right;
+  animation-duration: 2s;
+  transform: translateX(50%) scale(0, 1);
+}
+
+@keyframes right {
+  from {
+    transform: translateX(0%) scale(1,1);
+  }
+  to {
+    transform: translateX(50%) scale(0,1);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************** MOBILE ******************/
+
+@media only screen 
+  and (max-width: 768px) {
+  
+  html {
+    font-size: 1rem;
+  }
+
+  .main {
+    flex-direction: column;
+  }
+
+  .header, .content {
+    width: 100%;
+    overflow: unset;
+    padding: 1rem;
+  }
+
+  .header {
+    min-height: 100vh;
+  }
+
+  .content, .content > .wrapper {
+    display: block;
+    width: 100%;
+  }
+
+  .projects, .education {
+    width: 100%;
+  }
+
+  .header > .item {
+    width: 100%;
+  }
+}

@@ -1,26 +1,53 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './css/main.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// fun stuff
+import Name from './js/design/Name.js';
+
+// moodules
+import Education from './js/Education.js';
+import Projects from './js/Projects.js';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      index : 1,
+
+      info  : {
+        email : "marcloussm@gmail.com"
+      }
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <div className="main">
+
+          <div className="header">
+            <div className="item">
+              <Name/>
+              <a href={"mailto:" + this.state.info.email}> <label className="medium"> {this.state.info.email} </label> </a>
+              <a href="#projects" className="medium"> Projects </a>
+              <a href="#education" className="medium"> Education </a>
+            </div>
+          </div>
+          
+          <div className="content">
+            <div className="wrapper">
+              <Projects/>
+              <Education/>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    )
+  }
 }
 
 export default App;

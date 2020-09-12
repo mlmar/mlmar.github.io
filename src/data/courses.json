@@ -1,0 +1,37 @@
+[
+  {
+    "title" : "CSE 11", 
+    "description": "Introduction to Computer Science and Object-Oriented Programming", 
+    "languages": ["Java"]
+  },
+
+  {
+    "title" : "CSE 12", 
+    "description": "Basic Data Structures and Object-Oriented Design", 
+    "languages": ["Java", "C", "C++"]
+  },
+
+  {
+    "title" : "CSE 15L", 
+    "description": "Software Tools and Techniques Laboratory", 
+    "languages": ["Bash", "Git"]
+  },
+
+  {
+    "title" : "CSE 30", 
+    "description": "Computer Organization and Systems Programming", 
+    "languages": ["C++", "Assembly"]
+  },
+
+  {
+    "title" : "COGS 108",
+    "description" : "Data Science in Practice",
+    "languages": ["Python"]
+  },
+
+  {
+    "title" : "COGS 109",
+    "description" : "Modeling and Data Analysis",
+    "languages": ["Python"]
+  }
+]
