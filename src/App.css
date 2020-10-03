@@ -23,10 +23,6 @@ html, body, #root, .App {
   flex-direction: column;
 }
 
-html, body {
-  position: fixed;
-}
-
 .App *, .App *:before, .App *:after {
   margin: 0;
   font-family: sans-serif;

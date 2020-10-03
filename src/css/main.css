@@ -122,6 +122,17 @@ a:visited {
   color: unset;
 }
 
+/****************** IMAGE WRAPPER ******************/
+
+.image-wrapper {
+  display: flex;
+}
+
+.image-wrapper img {
+  max-width: 100%;
+  height: auto;
+}
+
 /****************** BUTTONS ******************/
 
 button {
@@ -233,21 +244,13 @@ label, p, h, li, a {
   flex: 1 1;
 }
 
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
 .gap > * {
   margin: .5rem;
-}
-
-.min-width {
-  width: min-content !important;
-}
-
-.max-width {
-  width: 100% !important;
-}
-
-.halves {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 /****************** LAYOUT ******************/
@@ -268,7 +271,7 @@ label, p, h, li, a {
   flex-direction: column;
   justify-content: center;
   background: var(--darker);
-  height: 80vh;
+  height: 100%;
   flex-shrink: 0;
   align-items: center;
 }
@@ -293,7 +296,6 @@ label, p, h, li, a {
   flex: 1 0 auto;
   align-items: center;
   background: white;
-
 }
 
 .content > .wrapper {
@@ -301,7 +303,6 @@ label, p, h, li, a {
   flex-direction: column;
   align-items: center;
   width: var(--width);
-  margin: 10rem 0 10rem 0;
 }
 
 .content > .wrapper > * {
@@ -309,13 +310,12 @@ label, p, h, li, a {
   flex-direction: column;
   flex: 1 0;
   width: 100%;
+  padding: 10rem 0 0 0;
 }
 
-.content > .wrapper > *:not(:last-child) {
-  margin-bottom: 10rem;
+.content > .wrapper > *:last-child {
+  padding-bottom: 10rem;
 }
-
-
 
 
 /****************** MODULES ******************/
@@ -325,15 +325,32 @@ label, p, h, li, a {
   display: flex;
   flex-direction: column;
   padding: 1rem 0rem 1rem 0rem;
-  margin-bottom: 1rem;
+}
+
+.education > .item:not(:last-child),
+.projects > .item:not(:last-child) {
+  margin-bottom: 5rem;
 }
 
 /****************** PROJECTS ******************/
+
+.projects .head {
+  margin-bottom: .5rem;
+}
 
 .projects .head label {
   display: flex;
   align-items: center;
 }
+
+.projects .subcontent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.projects .subcontent > * { flex-basis: 60%; }
+.projects .subcontent > .image-wrapper { flex-basis: 40%; }
+.projects .subcontent > *:first-child { padding-right: 2rem; }
 
 .button-panel {
   display: flex;
@@ -345,20 +362,16 @@ label, p, h, li, a {
   margin-right: .4rem;
 }
 
-
 /****************** DEMO ******************/
 
 .demo {
   display: flex;
   flex-direction: column;
-
   position: fixed;
-  top: 5rem;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 0);
-
+  transform: translate(-50%, -50%);
   background: var(--lighter);
-
   box-shadow: 0px 0px 6px 1px rgb(0 0 0 / 50%);
   z-index: 99;
 }
@@ -368,7 +381,10 @@ label, p, h, li, a {
 }
 
 .demo > .bar > label {
+  display: flex;
   padding: 0rem 0rem 0rem .2rem;
+  flex: 1 1;
+  justify-content: center;
 }
 
 .demo > .bar > button:last-child {
@@ -380,10 +396,9 @@ label, p, h, li, a {
 
 .demo > .item {
   width: 75vw;
-  max-height: 75vh;
+  max-height: 70vh;
   overflow: auto;
   overflow-x: hidden;
-  margin-bottom: .5rem;
 }
 
 /****************** DROPDOWN ******************/
@@ -454,10 +469,11 @@ label, p, h, li, a {
 
 .contact {
   display: flex;
+  flex-direction: column;
   height: 8rem;
   background: var(--darker);
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex: 0 0 auto;
 }
 
@@ -465,73 +481,24 @@ label, p, h, li, a {
   color: var(--light);
 }
 
-
-
-
-/****************** SCROLL ******************/
-
-.scroll {
+.contact .icons {
   display: flex;
-  align-items: center;
-  position: relative;
+  justify-content: center;
 }
 
-.scroll > .up,
-.scroll > .down,
-.scroll > .left,
-.scroll > .right {
-  background: var(--darker);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
-  animation-fill-mode: forwards;
+.contact .icons > *:not(:last-child) {
+  margin-right: 3rem;
 }
 
-.scroll > .up {
-  animation-name: up;
+.icon {
+  height: 2rem;
 }
 
-.scroll > .down {
-  animation-name: down;
+.icon img {
+  max-height: 100%;
+  width: auto;
+  filter: brightness(0) invert(1);
 }
-
-.scroll > .left {
-  animation-name: left;
-}
-
-.scroll > .right {
-  animation-name: right
-}
-
-
-
-
-@keyframes up {
-  from { transform: translateY(0%) scale(1,1); }
-  to { transform: translateY(-50%) scale(1,0); }
-}
-
-@keyframes down {
-  from { transform: translateY(0%) scale(1,1); }
-  to { transform: translateY(50%) scale(1,0); }
-}
-
-@keyframes left {
-  from { transform: translateX(0%) scale(1,1); }
-  to { transform: translateX(-50%) scale(0,1); }
-}
-
-@keyframes right {
-  from { transform: translateX(0%) scale(1,1); }
-  to { transform: translateX(50%) scale(0,1); }
-}
-
-
-
-
-
-
 
 
 
@@ -553,7 +520,7 @@ label, p, h, li, a {
   }
 
   .title {
-    font-size: 5rem;
+    font-size: 10vw;
   }
 
   .nav, .content {
@@ -565,7 +532,15 @@ label, p, h, li, a {
   }
 
   .content > .wrapper > * {
-    padding: 0;
+    padding: 5rem 0 0 0;
   }
 
+  .projects .subcontent > * {
+    flex-basis: 100% !important;
+    margin-bottom: 1rem;
+  }
+
+  .projects .image-wrapper {
+    display: block;
+  }
 }

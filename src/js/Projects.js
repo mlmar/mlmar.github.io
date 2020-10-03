@@ -6,13 +6,14 @@ import TopTracks from './demos/tonedeaf/TopTracks.js';
 
 // links
 const TONEDEAF_SITE = "https://tonedeaf.vercel.app";
-const TONEDEAF_GITHUB = "https://github.com/mlmar/tonedeaf"
 const TONEDEAF = { link: TONEDEAF_SITE, text: "Visit" };
+const TONEDEAF_PNG = require("../images/tonedeaf-screen.png");
 
 
 const BLOCK_SITE = "https://mlmar.github.io/Block";
 const BLOCK_GITHUB = "https://github.com/mlmar/Block";
 const BLOCK = { link: BLOCK_SITE, text: "Play" };
+const BLOCK_GIF = require("../images/block-screen.gif");
 
 // github button
 const GITHUB_PNG = require("../images/GitHub.png");
@@ -54,34 +55,14 @@ function Projects() {
     <div className="projects" id="projects">
       <label className="large bold line"> Projects </label>
 
-      { /* TEAMEASY */ }
-      <div  className="item">
-        <div className="flex">
-          <div className="right">
-            <span className="flex space head">
-              <label href={TONEDEAF_SITE} className="small bold"> 
-                TeamEasy 
-              </label>
-              <ButtonPanel site={TONEDEAF} github={TONEDEAF_GITHUB}/> 
-            </span>
-            <p>
-              ** todo **
-            </p>
-            <ul className="points">
-              <li> <span className="highlight"> ReactjS, Mongo, Express, Node </span> </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
       { /* TONEDEAF */ }
       <div className="item">
-        <div className="flex">
-          <div className="right">
-            <span className="flex space head">
-              <label href={TONEDEAF_SITE} className="small bold flex space"> Tonedeaf </label>
-              <ButtonPanel site={TONEDEAF} showDemo="tonedeaf"/>
-            </span>
+        <span className="flex space head">
+          <label href={TONEDEAF_SITE} className="small bold flex space"> Tonedeaf </label>
+          <ButtonPanel site={TONEDEAF} showDemo="tonedeaf"/>
+        </span>
+        <div className="subcontent small">
+          <div>
             <p>
               Sign in with Spotify to view your top 50 artists/tracks and find recommendations.
             </p>
@@ -90,29 +71,27 @@ function Projects() {
               <li> View data inaccessible through the normal Spotify app </li>
               <li> <span className="highlight"> ReactJS, CSS </span> </li>
             </ul>
-
-
           </div>
-          
-          { demo === "tonedeaf" &&
-            <Demo description="TopTracks and Tracks component demo with sample my data" onClose={() => setDemo(null)}>
-              <div className="tonedeaf">
-                <TopTracks/>
-              </div>
-            </Demo>
-          }
-
+          <div className="image-wrapper"> <img src={TONEDEAF_PNG} alt="block"/> </div>
         </div>
       </div>
 
+      { demo === "tonedeaf" &&
+        <Demo description="TopTracks and Tracks components" onClose={() => setDemo(null)}>
+          <div className="tonedeaf">
+            <TopTracks/>
+          </div>
+        </Demo>
+      }
+
       { /* BLOCK */ }
       <div  className="item">
-        <div className="flex">
-          <div className="right">
-            <span className="flex space head">
-              <label href={BLOCK_SITE} className="small bold flex space"> Block </label>
-              <ButtonPanel site={BLOCK} github={BLOCK_GITHUB}/>
-            </span>
+        <span className="flex space head">
+          <label href={BLOCK_SITE} className="small bold flex space"> Block </label>
+          <ButtonPanel site={BLOCK} github={BLOCK_GITHUB}/>
+        </span>
+        <div className="subcontent small">
+          <div>
             <p>
               A simple game where the objective is to avoid being crushed by blocks.
             </p>
@@ -121,6 +100,7 @@ function Projects() {
               <li> <span className="highlight"> JavaScript, CSS </span> </li>
             </ul>
           </div>
+          <div className="image-wrapper"> <img src={BLOCK_GIF} alt="block"/> </div>
         </div>
       </div>
 

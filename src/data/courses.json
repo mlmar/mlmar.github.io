@@ -24,6 +24,12 @@
   },
 
   {
+    "title" : "CSE 100",
+    "description": "Advanced Data Structures",
+    "languages": ["C++"]
+  },
+
+  {
     "title" : "COGS 108",
     "description" : "Data Science in Practice",
     "languages": ["Python"]
