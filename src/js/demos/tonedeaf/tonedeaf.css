@@ -1,17 +1,15 @@
-@keyframes drop {
+@keyframes fade {
   from {
-    margin-top: -2rem;
     opacity: 0;
   }
   to {
-    margin-top: 0rem;
     opacity: 1;
   }
 }
 
-.td-animate-drop { 
-  animation-name: drop;
-  animation-duration: .3s;
+.td-animate-fade { 
+  animation-name: fade;
+  animation-duration: 1s;
 }
 
 .td-div-toptracks {

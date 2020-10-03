@@ -1,11 +1,13 @@
 :root {
   --dark: #212121;
-  --darker: #141414;
+  --darker: black;
   --light: #ececec;
-  --lighter: #efefef;
+  --lighter: white;
 
   --highlight: #6868af;
   --hover: #c2c0ce;
+
+  --width: 60%;
 }
 
 
@@ -18,7 +20,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #e6e6e6;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -56,11 +58,12 @@
   }
 }
 
-.fade, .fade-1, .fade-2,  .fade-fast { animation-name: fade; }
+.fade, .fade-1, .fade-2,  .fade-fast, .fade-slow { animation-name: fade; }
 .fade { animation-duration: .5s; }
 .fade-1 { animation-duration: 1s; }
 .fade-2 { animation-duration: 1.5s; }
 .fade-fast { animation-duration: .2s }
+.fade-slow { animation-duration: 2s }
 
 
 
@@ -97,7 +100,8 @@
 /****************** LISTS ******************/
 
 ul.points {
-  list-style-type: circle;
+  list-style-type: "-  ";
+  padding-left: 1rem;
 }
 
 /****************** LINKS ******************/
@@ -187,11 +191,11 @@ label, p, h, li, a {
 }
 
 .title {
-  font-size: 5rem;
+  font-size: 8rem;
 }
 
 .large {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .medium {
@@ -217,14 +221,11 @@ label, p, h, li, a {
 
 /****************** DIV LAYOUTS ******************/
 
-.space {
-  display: flex;
-  justify-content: space-between;
-}
+.flex { display: flex; }
+.col { flex-direction: column; }
+.row { flex-direction: row; }
 
-.flex {
-  display: flex;
-}
+.space { justify-content: space-between; }
 
 .flex > .right {
   display: flex;
@@ -253,97 +254,65 @@ label, p, h, li, a {
 
 .main {
   display: flex;
-  flex-direction: row;
-  height: 100%;
-  background: var(--lighter);
+  flex-direction: column;
+  flex: 1 1;
+  overflow: auto;
+  background: var(--darker);
 }
 
 
-/****************** HEADER ******************/
+/****************** NAV ******************/
 
-.header {
+.nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 40vw;
-  padding: 2rem;
-
   background: var(--darker);
-
-  z-index: 10;
+  height: 80vh;
+  flex-shrink: 0;
+  align-items: center;
 }
 
-.header > .item {
-  display: flex;
-  flex-direction: column;
-  width: min-content;
-  align-self: center;
+.nav label {
+  color: var(--light);
 }
 
-.header label {
-  color: var(--lighter);
-}
-
-.header > .item > a:hover {
+.nav a:hover {
   text-decoration: underline;
 }
 
-.name {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
+.nav .links {
+  justify-content: space-around;
 }
-
-.name label {
-  display: flex;
-  padding: 0;
-  height: 5.3rem;
-}
-
-.container {
-  display: flex;
-}
-
-.container > .segment {
-  position: relative;
-}
-
-.container > .segment > .placeholder {
-  color: transparent;
-}
-
-.container > .segment > .scroll {
-  position: absolute;
-  top: 0;
-}
-
 
 /****************** CONTENT ******************/
 
 .content {
   display: flex;
   flex-direction: column;
-  flex: 1 1;
-  overflow: auto;
-  background: var(--lighter);
+  flex: 1 0 auto;
   align-items: center;
+  background: white;
+
 }
 
 .content > .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 35vw;
+  width: var(--width);
+  margin: 10rem 0 10rem 0;
 }
 
 .content > .wrapper > * {
   display: flex;
   flex-direction: column;
-  flex: 1 1;
-
-  padding-top: 5vw;
-  padding-bottom: 5vw;
+  flex: 1 0;
   width: 100%;
+}
+
+.content > .wrapper > *:not(:last-child) {
+  margin-bottom: 10rem;
 }
 
 
@@ -356,11 +325,13 @@ label, p, h, li, a {
   display: flex;
   flex-direction: column;
   padding: 1rem 0rem 1rem 0rem;
+  margin-bottom: 1rem;
 }
 
 /****************** PROJECTS ******************/
 
-.projects > .item .medium {
+.projects .head label {
+  display: flex;
   align-items: center;
 }
 
@@ -479,6 +450,20 @@ label, p, h, li, a {
 
 
 
+/****************** CONTACT ******************/
+
+.contact {
+  display: flex;
+  height: 8rem;
+  background: var(--darker);
+  align-items: center;
+  justify-content: space-around;
+  flex: 0 0 auto;
+}
+
+.contact label {
+  color: var(--light);
+}
 
 
 
@@ -567,26 +552,20 @@ label, p, h, li, a {
     flex-direction: column;
   }
 
-  .header, .content {
-    width: 100%;
-    overflow: unset;
-    padding: 1rem;
+  .title {
+    font-size: 5rem;
   }
 
-  .header {
-    min-height: 100vh;
+  .nav, .content {
+    padding: 2rem;
   }
 
-  .content, .content > .wrapper {
-    display: block;
+  .content > .wrapper {
     width: 100%;
   }
 
-  .projects, .education {
-    width: 100%;
+  .content > .wrapper > * {
+    padding: 0;
   }
 
-  .header > .item {
-    width: 100%;
-  }
 }

@@ -12,7 +12,7 @@ class Track extends React.Component {
     var rank = this.props.rank ? this.props.rank + ". " : "";
 
     return (
-      <div className="td-panel td-animate-drop">
+      <div className="td-panel td-animate-fade">
         <div className="td-div-track">
           <a href={this.props.url} className="td-link-center">
             <img className="td-img--medium" src={this.props.image} width="100" height="100" alt="track art"/>

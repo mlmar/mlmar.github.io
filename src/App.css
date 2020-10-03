@@ -21,7 +21,10 @@ html, body, #root, .App {
   height: 100%;
   width: 100%;
   flex-direction: column;
-  background: var(--lighter);
+}
+
+html, body {
+  position: fixed;
 }
 
 .App *, .App *:before, .App *:after {
@@ -32,8 +35,6 @@ html, body, #root, .App {
   transition: 
     background .5s ease,
     color .5s ease,
-    padding .5s ease,
-    margin .5s ease,
     border .5s ease,
     opacity .5s ease;
 }
