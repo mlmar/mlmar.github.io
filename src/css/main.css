@@ -100,8 +100,12 @@
 /****************** LISTS ******************/
 
 ul.points {
-  list-style-type: "-  ";
-  padding-left: 1rem;
+  list-style-type: none;
+  padding-left: 0rem;
+}
+
+ul.points > *:before {
+  content: ' - ';
 }
 
 /****************** LINKS ******************/
@@ -122,6 +126,10 @@ a:visited {
   color: unset;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 /****************** IMAGE WRAPPER ******************/
 
 .image-wrapper {
@@ -140,7 +148,7 @@ button {
   align-items: center;
   justify-content: center;
 
-  height: 2rem;
+  height: 2em;
   min-width: min-content;
   width: 4rem;
 
@@ -150,7 +158,7 @@ button {
   border: none;
   border-radius: .2rem;
 
-  font-size: .8rem;
+  font-size: .8em;
   font-weight: bold;
 
   outline: none !important;
@@ -270,7 +278,7 @@ label, p, h, li, a {
   flex-direction: column;
   justify-content: center;
   background: var(--darker);
-  height: 100vh;
+  height: 80vh;
   flex-shrink: 0;
   align-items: center;
 }
@@ -327,12 +335,7 @@ label, p, h, li, a {
 .projects > .item {
   display: flex;
   flex-direction: column;
-  padding: 1rem 0rem 1rem 0rem;
-}
-
-.education > .item:not(:last-child),
-.projects > .item:not(:last-child) {
-  margin-bottom: 5rem;
+  padding: 3rem 0rem 10rem 0rem;
 }
 
 /****************** PROJECTS ******************/
@@ -376,32 +379,42 @@ label, p, h, li, a {
   transform: translate(-50%, -50%);
   background: var(--lighter);
   box-shadow: 0px 0px 6px 1px rgb(0 0 0 / 50%);
-  z-index: 99;
 }
 
 .demo > .bar {
   display: flex;
 }
 
-.demo > .bar > label {
-  display: flex;
-  padding: 0rem 0rem 0rem .2rem;
-  flex: 1 1;
-  justify-content: center;
-}
-
-.demo > .bar > button:last-child {
-  height: fit-content !important;
-  width: fit-content !important;
-  padding: .2rem 1rem .2rem 1rem;
-  border-radius: initial;
-}
-
 .demo > .item {
   width: 75vw;
-  max-height: 70vh;
+  height: 70vh;
   overflow: auto;
   overflow-x: hidden;
+}
+
+.demo > .item.fit {
+  width: fit-content;
+  height: fit-content;
+}
+
+.blur {
+  content: " ";
+  position: fixed;
+  background: rgba(0, 0, 0, 0.652);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+.blur > .close {
+  position: fixed;
+  background: none;
+  height: 100%;
+  width: 100%;
+  font-size: 1rem;
+  color: var(--dark);
 }
 
 /****************** DROPDOWN ******************/
@@ -458,7 +471,7 @@ label, p, h, li, a {
 .education .course {
   display: flex;
   flex-direction: column;
-  padding: .2rem 1rem 0rem .5rem;
+  padding: .2rem 0 .5rem 0;
 }
 
 .education .course .languages {
@@ -473,11 +486,11 @@ label, p, h, li, a {
 .contact {
   display: flex;
   flex-direction: column;
-  height: 8rem;
   background: var(--darker);
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
+  padding: 1.5rem;
 }
 
 .contact label {
@@ -518,12 +531,21 @@ label, p, h, li, a {
     font-size: 1rem;
   }
 
-  .main {
-    flex-direction: column;
-  }
+
+  
+
 
   .title {
     font-size: 10vw;
+  }
+  
+  .small {
+    font-size: .8rem; 
+  }
+
+
+  .main {
+    flex-direction: column;
   }
 
   .nav, .content {
@@ -538,6 +560,13 @@ label, p, h, li, a {
     padding-top: 5rem;
   }
 
+  .education > .item,
+  .projects > .item {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0rem 3rem 0rem;
+  }
+
   .projects .subcontent > * {
     flex-basis: 100% !important;
     margin-bottom: 1rem;
@@ -546,4 +575,6 @@ label, p, h, li, a {
   .projects .image-wrapper {
     display: block;
   }
+
+
 }

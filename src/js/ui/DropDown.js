@@ -15,10 +15,10 @@ function DropDown({ description, alt, children }) {
       setHidden(false);
       setItemClass(""); // start reverse animation
     } else {
-      setItemClass("reverse"); // start reverse animation
-      setTimeout(() => { // change state while animating
+      // setItemClass("reverse"); // start reverse animation
+      // setTimeout(() => { // change state while animating
         setHidden(true);
-      }, 300);
+      // }, 300);
     }
   }
 

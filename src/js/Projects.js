@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Demo from './ui/Demo.js';
 
 // tonedeaf demo
-import TopTracks from './demos/tonedeaf/TopTracks.js';
+import TrackList from './demos/tonedeaf/TrackList.js';
 
 // links
 const TONEDEAF_SITE = "https://tonedeaf.vercel.app";
@@ -20,6 +20,10 @@ const GITHUB_PNG = require("../images/GitHub.png");
 
 function Projects() {
   const [demo, setDemo] = useState(null) // open demo of the same name if not null
+
+  const selectDemo = (showDemo) => {
+    setDemo(demo === showDemo ? null : showDemo);
+  }
 
   /*  renders a project item
    *    link  {site}        : link to the actual project
@@ -44,7 +48,7 @@ function Projects() {
         }
 
         { showDemo &&
-          <button className="yellow" onClick={() => setDemo(demo === showDemo ? null : showDemo)}> Demo </button>
+          <button className="yellow" onClick={() => selectDemo(showDemo)}> Demo </button>
         }
 
       </span>
@@ -67,19 +71,25 @@ function Projects() {
               Sign in with Spotify to view your top 50 artists/tracks and find recommendations.
             </p>
             <ul className="points">
-              <li> UI for Spotify Web API to display track lists and info </li>
-              <li> View data inaccessible through the normal Spotify app </li>
+              <li> UI for Spotify Web API </li>
+              <li> Ability to view data inaccessible through the Spotify app </li>
               <li> <span className="highlight"> ReactJS, CSS </span> </li>
             </ul>
           </div>
-          <div className="image-wrapper"> <img src={TONEDEAF_PNG} alt="block"/> </div>
+          <div className="image-wrapper"> <img src={TONEDEAF_PNG} className="clickable" alt="tonedeaf" onClick={() => selectDemo("tonedeaf_png")}/> </div>
         </div>
       </div>
 
+      { demo === "tonedeaf_png" &&
+        <Demo onClose={setDemo} className="fit">
+          <div className="image-wrapper"> <img src={TONEDEAF_PNG} alt="tonedeaf"/> </div>
+        </Demo>
+      }
+
       { demo === "tonedeaf" &&
-        <Demo description="TopTracks and Tracks components" onClose={() => setDemo(null)}>
+        <Demo onClose={setDemo}>
           <div className="tonedeaf">
-            <TopTracks/>
+            <TrackList/>
           </div>
         </Demo>
       }
@@ -100,9 +110,15 @@ function Projects() {
               <li> <span className="highlight"> JavaScript, CSS </span> </li>
             </ul>
           </div>
-          <div className="image-wrapper"> <img src={BLOCK_GIF} alt="block"/> </div>
+          <div className="image-wrapper"> <img src={BLOCK_GIF} className="clickable" alt="block" onClick={() => selectDemo("block_gif")}/> </div>
         </div>
       </div>
+
+      { demo === "block_gif" &&
+        <Demo onClose={setDemo} className="fit">
+          <div className="image-wrapper"> <img src={BLOCK_GIF} alt="block"/> </div>
+        </Demo>
+      }
 
     </div>
   )

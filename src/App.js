@@ -21,11 +21,8 @@ function App() {
             <Education/>
           </div>
         </div>
-
         <Contact/> 
-
       </div>
-
     </div>
   )
 }
