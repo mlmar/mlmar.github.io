@@ -278,7 +278,7 @@ label, p, h, li, a {
   flex-direction: column;
   justify-content: center;
   background: var(--darker);
-  height: 80vh;
+  height: 40vh;
   flex-shrink: 0;
   align-items: center;
 }
@@ -536,7 +536,7 @@ label, p, h, li, a {
 
 
   .title {
-    font-size: 10vw;
+    font-size: 9vw;
   }
   
   .small {
