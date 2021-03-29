@@ -39,5 +39,12 @@
     "title" : "COGS 109",
     "description" : "Modeling and Data Analysis",
     "languages": ["Python"]
+  },
+
+  {
+    "title": "CSE 101",
+    "description": "Design and Analysis of Algorithms"
   }
+
+
 ]

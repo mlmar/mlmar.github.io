@@ -6,6 +6,7 @@ import TrackList from './demos/tonedeaf/TrackList.js';
 
 // links
 const TONEDEAF_SITE = "https://tonedeaf.vercel.app";
+const TONEDEAF_GITHUB = "https://github.com/mlmar/tonedeaf";
 const TONEDEAF = { link: TONEDEAF_SITE, text: "Visit" };
 const TONEDEAF_PNG = require("../images/tonedeaf-screen.png");
 
@@ -33,7 +34,7 @@ function Projects() {
   const ButtonPanel = ({ site, github, showDemo }) => {
     // only render the params that exist
     return (
-      <span className="button-panel">
+      <span className="button-panel small">
         { site &&
           <a href={site.link}> <button className="blue"> {site.text} </button> </a>
         }
@@ -55,49 +56,42 @@ function Projects() {
     )
   }
 
+  const handleKeyDown = (e) => {
+    if(e.key === "Escape") selectDemo();
+  }
+
   return (
-    <div className="projects" id="projects">
-      <label className="large bold line"> Projects </label>
+    <div className="projects" id="projects" tabIndex={-1} onKeyDown={handleKeyDown}>
+      <label className="medium bold line"> Projects </label>
 
       { /* TONEDEAF */ }
       <div className="item">
         <span className="flex space head">
-          <label href={TONEDEAF_SITE} className="small bold flex space"> Tonedeaf </label>
-          <ButtonPanel site={TONEDEAF} showDemo="tonedeaf"/>
+          <label href={TONEDEAF_SITE} className="small bold flex space underline"> Tonedeaf </label>
+          <ButtonPanel site={TONEDEAF}  github={TONEDEAF_GITHUB} showDemo="tonedeaf"/>
         </span>
         <div className="subcontent small">
           <div>
             <p>
               Sign in with Spotify to view your top 50 artists/tracks and find recommendations.
             </p>
+            <br/>
             <ul className="points">
               <li> UI for Spotify Web API </li>
               <li> Ability to view data inaccessible through the Spotify app </li>
-              <li> <span className="highlight"> ReactJS, CSS </span> </li>
+              <li> <span className="highlight"> ReactJS </span> </li>
             </ul>
           </div>
           <div className="image-wrapper"> <img src={TONEDEAF_PNG} className="clickable" alt="tonedeaf" onClick={() => selectDemo("tonedeaf_png")}/> </div>
         </div>
       </div>
 
-      { demo === "tonedeaf_png" &&
-        <Demo onClose={setDemo} className="fit">
-          <div className="image-wrapper"> <img src={TONEDEAF_PNG} alt="tonedeaf"/> </div>
-        </Demo>
-      }
 
-      { demo === "tonedeaf" &&
-        <Demo onClose={setDemo}>
-          <div className="tonedeaf">
-            <TrackList/>
-          </div>
-        </Demo>
-      }
 
       { /* BLOCK */ }
-      <div  className="item">
+      {/* <div  className="item">
         <span className="flex space head">
-          <label href={BLOCK_SITE} className="small bold flex space"> Block </label>
+          <label href={BLOCK_SITE} className="small bold flex space underline"> Block </label>
           <ButtonPanel site={BLOCK} github={BLOCK_GITHUB}/>
         </span>
         <div className="subcontent small">
@@ -107,16 +101,32 @@ function Projects() {
             </p>
             <ul className="points">
               <li> Learned to create a web game that can be played on desktop and mobile </li>
-              <li> <span className="highlight"> JavaScript, CSS </span> </li>
+              <li> <span className="highlight"> JavaScript </span> </li>
             </ul>
           </div>
           <div className="image-wrapper"> <img src={BLOCK_GIF} className="clickable" alt="block" onClick={() => selectDemo("block_gif")}/> </div>
         </div>
-      </div>
+      </div> */}
+
+
+
+
+
+      { demo === "tonedeaf_png" &&
+        <Demo onClose={setDemo} className="image-float">
+          <img src={TONEDEAF_PNG} alt="tonedeaf"/>
+        </Demo>
+      }
+
+      { demo === "tonedeaf" &&
+        <Demo onClose={setDemo} className="tonedeaf">
+          <TrackList/>
+        </Demo>
+      }
 
       { demo === "block_gif" &&
-        <Demo onClose={setDemo} className="fit">
-          <div className="image-wrapper"> <img src={BLOCK_GIF} alt="block"/> </div>
+        <Demo onClose={setDemo} className="image-float">
+          <img src={BLOCK_GIF} alt="block"/>
         </Demo>
       }
 

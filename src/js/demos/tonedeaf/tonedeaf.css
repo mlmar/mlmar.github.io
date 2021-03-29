@@ -7,6 +7,10 @@
   }
 }
 
+.td-div-toptracks {
+  font-size: .8rem !important;
+}
+
 .td-animate-fade { 
   animation-name: fade;
   animation-duration: 1s;
@@ -25,8 +29,7 @@
   display: flex;
   height: min-content;
   width: 100%;
-  padding: 2rem;
-  margin: .6rem 0 .6rem 0;
+  padding: 2em;
   
   flex-direction: column;
   text-align: left;
@@ -50,14 +53,14 @@
 .td-div-track > .td-info {
   display: flex;
   flex-direction: column;
-  padding: .5rem 0 .2rem 1rem;
+  padding: .5em 0 .2em 1em;
   width: 100%;
 }
 
 .td-div-track > .td-info > .td-item {
   display: grid;
   grid-template-columns: 30% 70%;
-  grid-gap: .3rem;
+  grid-gap: .3em;
   width: 100%;
 }
 
@@ -74,12 +77,12 @@
 }
 
 .td-label-medium {
-  font-size: 1.4rem;
+  font-size: 1.4em;
   font-weight: bolder;
 }
 
 .td-label-small {
-  font-size: .9rem;
+  font-size: .9em;
 }
 
 
@@ -99,14 +102,14 @@
   }
 
   .td-label-medium {
-    font-size: .9rem;
+    font-size: .9em;
     font-weight: bolder;
-    padding-bottom: .5rem;
+    padding-bottom: .5em;
   }
 
   .td-label-small {
-    font-size: .8rem;
-    padding-bottom: .2rem;
+    font-size: .8em;
+    padding-bottom: .2em;
   }
 
 }

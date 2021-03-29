@@ -3,13 +3,15 @@ import DropDown from './ui/DropDown.js';
 
 const COURSES = require("../data/courses.json");
 
-function Education() {
+function Education({ courses }) {
   // shows course with highlighted languages beneath
   const CourseLabel = (props) => {
     return (
-      <div className="course">
+      <div className="course small">
         <label> {props.title} : {props.description} </label>
-        <label className="languages highlight"> {props.languages.join(", ")} </label>
+        {props.languages && 
+          <label className="languages highlight"> {props.languages.join(", ")} </label>
+        }
       </div>
     )
   }
@@ -17,11 +19,11 @@ function Education() {
   return (
     <div className="education" id="education">
 
-      <label className="large bold line"> Education </label>
+      <label className="medium bold line"> Education </label>
       
       <div className="item flex">
-        <span className="space">
-          <label className="small bold"> University of California, San Diego </label>
+        <span>
+          <label className="small bold underline"> University of California, San Diego</label>
           <label className="small"> (2018 - Present) </label>
         </span>
 
@@ -34,11 +36,14 @@ function Education() {
           </div>
           
           <br/>
-          <DropDown description="See Relevant Coursework" alt="Hide Relevant Coursework">
-            { 
-              COURSES?.map((course, i) => <CourseLabel {...course} key={i}/> )
-            }
-          </DropDown>
+          { courses &&
+            <DropDown description="See Relevant Coursework" alt="Hide Relevant Coursework">
+              { 
+                COURSES?.map((course, i) => <CourseLabel {...course} key={i}/> )
+              }
+            </DropDown>
+          }
+
 
         </div>
       </div>
