@@ -62,27 +62,26 @@ function Projects() {
 
   return (
     <div className="projects" id="projects" tabIndex={-1} onKeyDown={handleKeyDown}>
-      <label className="medium bold line"> Projects </label>
+      <label className="medium bold underline"> Projects </label>
 
       { /* TONEDEAF */ }
       <div className="item">
-        <span className="flex space head">
-          <label href={TONEDEAF_SITE} className="small bold flex space underline"> Tonedeaf </label>
-          <ButtonPanel site={TONEDEAF}  github={TONEDEAF_GITHUB} showDemo="tonedeaf"/>
-        </span>
+        <label href={TONEDEAF_SITE} className="small bold flex space head"> Tonedeaf </label>
         <div className="subcontent small">
-          <div>
-            <p>
-              Sign in with Spotify to view your top 50 artists/tracks and find recommendations.
-            </p>
-            <br/>
-            <ul className="points">
-              <li> UI for Spotify Web API </li>
-              <li> Ability to view data inaccessible through the Spotify app </li>
-              <li> <span className="highlight"> ReactJS </span> </li>
-            </ul>
-          </div>
-          <div className="image-wrapper"> <img src={TONEDEAF_PNG} className="clickable" alt="tonedeaf" onClick={() => selectDemo("tonedeaf_png")}/> </div>
+
+          <p className="description">
+            Sign in with Spotify to view information about your top 50 artists/tracks and find music recommendations.
+          </p>
+
+          <ul className="points">
+            <li> UI for Spotify API </li>
+            <li> View data that you can't see through the normal Spotify app </li>
+            <li> <span className="highlight"> ReactJS </span> </li>
+          </ul>
+
+          <div className="image-wrapper"> <img src={TONEDEAF_PNG} className="clickable" title="tonedeaf" alt="tonedeaf" onClick={() => selectDemo("tonedeaf_png")}/>  </div>
+          <ButtonPanel site={TONEDEAF}  github={TONEDEAF_GITHUB} showDemo="tonedeaf"/> 
+          
         </div>
       </div>
 
@@ -91,7 +90,7 @@ function Projects() {
       { /* BLOCK */ }
       {/* <div  className="item">
         <span className="flex space head">
-          <label href={BLOCK_SITE} className="small bold flex space underline"> Block </label>
+          <label href={BLOCK_SITE} className="small bold flex space"> Block </label>
           <ButtonPanel site={BLOCK} github={BLOCK_GITHUB}/>
         </span>
         <div className="subcontent small">

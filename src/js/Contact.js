@@ -10,7 +10,7 @@ const LINKEDIN_PNG = require("../images/LinkedIn.png");
 
 function Contact({ compact }) {
   return (
-    <div className="contact">
+    <div className="contact" id="contact">
       { !compact ?
         <>
           <br/>

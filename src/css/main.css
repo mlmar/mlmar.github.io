@@ -7,12 +7,12 @@
   --highlight: #6868af;
   --hover: #c2c0ce;
 
-  --width: 75%;
+  --width: 50rem;
 }
 
 
 html {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 
@@ -105,12 +105,12 @@ html {
 
 ul.points {
   list-style-type: circle;
-  padding-left: 1rem;
+  padding-left: 1.2rem;
 }
 
 /****************** LINKS ******************/
 
-a, .highlight {
+.highlight {
   color: var(--highlight) !important;
 }
 
@@ -134,12 +134,16 @@ a:visited {
 
 .image-wrapper {
   display: flex;
+  flex-direction: column;
   height: min-content;
+  
 }
 
 .image-wrapper img {
   align-self: start;
   max-width: 100%;
+  box-shadow: 0px 0px 12px 1px rgb(0 0 0 / 20%);
+
 }
 
 .image-float {
@@ -288,15 +292,16 @@ label, p, h, li, a {
   flex-direction: column;
   justify-content: center;
   background: var(--darker);
-  height: 3rem;
+  height: 6rem;
   flex-shrink: 0;
   align-items: center;
 }
 
-.nav label {
-  color: var(--light);
+.nav .title {
   width: var(--width);
   text-align: left;
+  color: var(--light);
+  font-size: 2rem;
 }
 
 .nav a:hover {
@@ -305,24 +310,24 @@ label, p, h, li, a {
 
 /****************** CONTENT ******************/
 
-.content {
+.content, .content > .wrapper, .content > .wrapper > * {
   display: flex;
   flex-direction: column;
+}
+
+.content {
   flex: 1 0 auto;
   align-items: center;
   background: white;
 }
 
 .content > .wrapper {
-  display: flex;
-  flex-direction: column;
+
   align-items: center;
   width: var(--width);
 }
 
 .content > .wrapper > * {
-  display: flex;
-  flex-direction: column;
   flex: 1 0;
   width: 100%;
   outline: none;
@@ -334,7 +339,7 @@ label, p, h, li, a {
 }
 
 .content > .wrapper > * {
-  padding-bottom: 10rem;
+  padding-bottom: 2rem;
 }
 
 
@@ -344,7 +349,7 @@ label, p, h, li, a {
 .projects > .item {
   display: flex;
   flex-direction: column;
-  padding: 3rem 0rem 10rem 0rem;
+  padding: 2rem 0rem 10rem 0rem;
 }
 
 /****************** PROJECTS ******************/
@@ -353,24 +358,18 @@ label, p, h, li, a {
   margin-bottom: .5rem;
 }
 
-.projects .head label {
-  display: flex;
-  align-items: center;
-}
-
 .projects .subcontent {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-.projects .subcontent > * { flex-basis: 55%; }
-.projects .subcontent > .image-wrapper { flex-basis: 45%; }
-.projects .subcontent > *:first-child { padding-right: 2rem; }
+.projects .subcontent > * {
+  margin-bottom: 1rem;
+}
 
 .button-panel {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .button-panel > *:not(:last-child) {
@@ -400,7 +399,7 @@ label, p, h, li, a {
 .blur {
   content: " ";
   position: fixed;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(192, 192, 192, 0.481);
   top: 0;
   left: 0;
   width: 100%;
@@ -416,6 +415,7 @@ label, p, h, li, a {
   width: 100%;
   font-size: 1rem;
   color: var(--dark);
+  cursor: pointer;
 }
 
 
@@ -548,46 +548,39 @@ label, p, h, li, a {
 /****************** MOBILE ******************/
 
 @media only screen 
-  and (max-width: 768px) {
+  and (max-width: 1000px) {
 
   :root {
     --width: 100%;
   }
   
   html {
-    font-size: 1.1rem;
+    font-size: .9rem;
   }
 
-  .small {
-    font-size: .8rem; 
+  .nav {
+    height: 1.8rem;
+  }
+  
+  .nav .title {
+    font-size: 1.2rem;
+  }
+
+  .medium {
+    font-size: 1rem;
   }
 
   .main {
     flex-direction: column;
   }
 
-
   .nav, .content {
-    padding: 2rem;
+    padding: 3rem 1.5rem;
   }
 
   .content > .wrapper > *:first-child {
     padding-top: 1rem;
   }
-
-  .education > .item,
-  .projects > .item {
-    display: flex;
-    flex-direction: column;
-    padding: 3rem 0rem 3rem 0rem;
-  }
-
-  .projects .subcontent > * {
-    flex-basis: 100% !important;
-    margin-bottom: 1rem;
-  }
-  
-  .projects .subcontent > *:first-child { padding-right: 0; }
 
   .demo.tonedeaf {
     max-width: 98vw;
