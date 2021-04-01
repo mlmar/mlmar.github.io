@@ -15,11 +15,12 @@ const BLOCK_SITE = "https://mlmar.github.io/Block";
 const BLOCK_GITHUB = "https://github.com/mlmar/Block";
 const BLOCK = { link: BLOCK_SITE, text: "Play" };
 const BLOCK_GIF = require("../images/block-screen.gif");
+const BLOCK_MOBILE = require('../images/block-mobile.gif');
 
 // github button
 const GITHUB_PNG = require("../images/GitHub.png");
 
-function Projects() {
+function Projects({ className }) {
   const [demo, setDemo] = useState(null) // open demo of the same name if not null
 
   const selectDemo = (showDemo) => {
@@ -34,7 +35,7 @@ function Projects() {
   const ButtonPanel = ({ site, github, showDemo }) => {
     // only render the params that exist
     return (
-      <span className="button-panel small">
+      <span className="button-panel medium">
         { site &&
           <a href={site.link}> <button className="blue"> {site.text} </button> </a>
         }
@@ -61,26 +62,28 @@ function Projects() {
   }
 
   return (
-    <div className="projects" id="projects" tabIndex={-1} onKeyDown={handleKeyDown}>
-      <label className="medium bold underline"> Projects </label>
+    <div className={`projects ${className || ""}`} id="projects" tabIndex={-1} onKeyDown={handleKeyDown}>
+      <label className="large bold"> Projects </label>
 
       { /* TONEDEAF */ }
       <div className="item">
-        <label href={TONEDEAF_SITE} className="small bold flex space head"> Tonedeaf </label>
-        <div className="subcontent small">
+        <label href={TONEDEAF_SITE} className="medium bold flex space head"> Tonedeaf </label>
+        <div className="subcontent medium">
 
           <p className="description">
             Sign in with Spotify to view information about your top 50 artists/tracks and find music recommendations.
           </p>
 
-          <ul className="points">
+          <div className="display">
+            <div className="image-wrapper"> <img src={TONEDEAF_PNG} className="clickable" title="tonedeaf" alt="tonedeaf" onClick={() => selectDemo("tonedeaf_png")}/> </div>
+            <ButtonPanel site={TONEDEAF}  github={TONEDEAF_GITHUB} showDemo="tonedeaf"/> 
+          </div>
+
+          <ul className="points small">
             <li> UI for Spotify API </li>
-            <li> View data that you can't see through the normal Spotify app </li>
+            <li> View data that cannot be viewed in the normal Spotify app </li>
             <li> <span className="highlight"> ReactJS </span> </li>
           </ul>
-
-          <div className="image-wrapper"> <img src={TONEDEAF_PNG} className="clickable" title="tonedeaf" alt="tonedeaf" onClick={() => selectDemo("tonedeaf_png")}/>  </div>
-          <ButtonPanel site={TONEDEAF}  github={TONEDEAF_GITHUB} showDemo="tonedeaf"/> 
           
         </div>
       </div>
@@ -88,24 +91,26 @@ function Projects() {
 
 
       { /* BLOCK */ }
-      {/* <div  className="item">
-        <span className="flex space head">
-          <label href={BLOCK_SITE} className="small bold flex space"> Block </label>
-          <ButtonPanel site={BLOCK} github={BLOCK_GITHUB}/>
-        </span>
-        <div className="subcontent small">
-          <div>
-            <p>
-              A simple game where the objective is to avoid being crushed by blocks.
-            </p>
-            <ul className="points">
-              <li> Learned to create a web game that can be played on desktop and mobile </li>
-              <li> <span className="highlight"> JavaScript </span> </li>
-            </ul>
+      <div  className="item">
+        <label href={BLOCK_SITE} className="medium bold flex space head"> Block </label>
+        <div className="subcontent medium">
+
+          <p className="description">
+            A simple game where the objective is to avoid being crushed by blocks.
+          </p>
+
+          <div className="display">
+            <div className="image-wrapper"> <img src={BLOCK_GIF} className="clickable" title="Block" alt="Block" onClick={() => selectDemo("block_gif")}/> </div>
+            <ButtonPanel site={BLOCK} github={BLOCK_GITHUB}/>
           </div>
-          <div className="image-wrapper"> <img src={BLOCK_GIF} className="clickable" alt="block" onClick={() => selectDemo("block_gif")}/> </div>
+
+          <ul className="points small">
+            <li> Can be played on both desktop and mobile </li>
+            <li> <span className="highlight"> JavaScript </span> </li>
+          </ul>
+
         </div>
-      </div> */}
+      </div>
 
 
 

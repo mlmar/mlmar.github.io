@@ -7,7 +7,7 @@ function Education({ courses }) {
   // shows course with highlighted languages beneath
   const CourseLabel = (props) => {
     return (
-      <div className="course small">
+      <div className="course medium">
         <label> {props.title} : {props.description} </label>
         {props.languages && 
           <label className="languages highlight"> {props.languages.join(", ")} </label>
@@ -19,12 +19,12 @@ function Education({ courses }) {
   return (
     <div className="education" id="education">
 
-      <label className="medium bold line"> Education </label>
+      <label className="large bold"> Education </label>
       
       <div className="item flex">
         <span>
-          <label className="small bold underline"> University of California, San Diego</label>
-          <label className="small"> (2018 - Present) </label>
+          <label className="medium bold"> University of California, San Diego</label>
+          <label className="medium"> (2018 - Present) </label>
         </span>
 
         <br/>

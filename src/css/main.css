@@ -4,6 +4,8 @@
   --light: #ececec;
   --lighter: white;
 
+  --gray:  rgb(89, 89, 89);
+
   --highlight: #6868af;
   --hover: #c2c0ce;
 
@@ -104,8 +106,9 @@ html {
 /****************** LISTS ******************/
 
 ul.points {
-  list-style-type: circle;
+  list-style-type: disc;
   padding-left: 1.2rem;
+  color: var(--gray);
 }
 
 /****************** LINKS ******************/
@@ -136,13 +139,12 @@ a:visited {
   display: flex;
   flex-direction: column;
   height: min-content;
-  
 }
 
 .image-wrapper img {
   align-self: start;
   max-width: 100%;
-  box-shadow: 0px 0px 12px 1px rgb(0 0 0 / 20%);
+  box-shadow: 0px 0px 60px 1px rgb(0 0 0 / 20%);
 
 }
 
@@ -217,40 +219,23 @@ label, p, h, li, a {
   padding: .2rem 0rem .2rem 0rem;
   word-spacing: .1em;
   letter-spacing: normal;
-  color: var(--darker);
 }
 
-.title {
-  font-size: 1rem;
+label, p {
+  color: var(--gray);
 }
 
-.large {
-  font-size: 3rem;
-}
 
-.medium {
-  font-size: 1.4rem;
-}
+.title { font-size: 1rem; }
+.large { font-size: 2rem; color: var(--gray); }
+.medium { font-size: 1.3rem; color: black; }
+.small { font-size: 1.1rem; }
+.tiny { font-size: .8rem; }
 
-.small {
-  font-size: 1rem;
-}
-
-.bold {
-  font-weight: 600;  
-}
-
-.italic {
-  font-style: italic;
-}
-
-.center {
-  text-align: center;
-}
-
-.underline {
-  text-decoration: underline;
-}
+.bold { font-weight: 800;}
+.italic { font-style: italic; }
+.center { text-align: center; }
+.underline { text-decoration: underline; }
 
 /****************** DIV LAYOUTS ******************/
 
@@ -334,8 +319,16 @@ label, p, h, li, a {
 }
 
 
-.content > .wrapper > *:first-child {
-  padding-top: 10rem
+.content > .wrapper > .about {
+  display: flex;
+  padding: 4rem 0 5rem;
+  word-break: break-word;
+  line-height: 2.6rem;
+}
+
+.content > .wrapper > .about span {
+  display: contents;
+  overflow-wrap: break-word;
 }
 
 .content > .wrapper > * {
@@ -349,7 +342,7 @@ label, p, h, li, a {
 .projects > .item {
   display: flex;
   flex-direction: column;
-  padding: 2rem 0rem 10rem 0rem;
+  padding: 4rem 0rem 10rem 0rem;
 }
 
 /****************** PROJECTS ******************/
@@ -364,7 +357,15 @@ label, p, h, li, a {
 }
 
 .projects .subcontent > * {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.projects .display {
+  width: 100%;
+}
+
+.projects .display .button-panel {
+  margin-top: .5rem;
 }
 
 .button-panel {
@@ -566,16 +567,12 @@ label, p, h, li, a {
     font-size: 1.2rem;
   }
 
-  .medium {
-    font-size: 1rem;
-  }
-
   .main {
     flex-direction: column;
   }
 
   .nav, .content {
-    padding: 3rem 1.5rem;
+    padding: .8rem;
   }
 
   .content > .wrapper > *:first-child {

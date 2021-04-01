@@ -2,8 +2,6 @@ import React from 'react';
 import './App.css';
 import './css/main.css';
 
-import Nav from './js/Nav.js';
-
 // moodules
 import Education from './js/Education.js';
 import Projects from './js/Projects.js';
@@ -14,10 +12,13 @@ function App() {
   return (
     <div className="App">
       <div className="main">
-        <Nav/>
         <div className="content">
           <div className="wrapper">
-            <Projects/>
+            <p className="about large fade-1">
+              Hi I'm Marcus Martinez. I'm a junior at <span className="highlight"> UCSD </span> majoring in cognitive science and minoring in computer science. 
+              I am currently pursuing an internship and any career opportunities in web development.
+            </p>
+            <Projects className="fade-2"/>
             <Education/>
           </div>
         </div>

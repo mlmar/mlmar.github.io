@@ -24,9 +24,9 @@ function Contact({ compact }) {
         :
         <>
           <span className="compact-links">
-            <a href={"mailto:" + email} className="icon"> <img src={MAIL_PNG} alt="github" title="Email Me"/> {} </a>
-            <a href={github} className="icon"> <img src={GITHUB_PNG} alt="github" title="Github"/> {} </a>
-            <a href={linkedin} className="icon"> <img src={LINKEDIN_PNG} alt="linkedin" title="LinkedIn"/> {} </a>
+            <a href={"mailto:" + email} className="icon"> <img src={MAIL_PNG} alt="github" title="Email Me"/> </a>
+            <a href={github} className="icon"> <img src={GITHUB_PNG} alt="github" title="Github"/> </a>
+            <a href={linkedin} className="icon"> <img src={LINKEDIN_PNG} alt="linkedin" title="LinkedIn"/> </a>
           </span>
           <br/>
           <label className="small"> {email} </label>
