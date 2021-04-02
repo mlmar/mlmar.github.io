@@ -15,7 +15,7 @@ const BLOCK_SITE = "https://mlmar.github.io/Block";
 const BLOCK_GITHUB = "https://github.com/mlmar/Block";
 const BLOCK = { link: BLOCK_SITE, text: "Play" };
 const BLOCK_GIF = require("../images/block-screen.gif");
-const BLOCK_MOBILE = require('../images/block-mobile.gif');
+// const BLOCK_MOBILE = require('../images/block-mobile.gif');
 
 // github button
 const GITHUB_PNG = require("../images/GitHub.png");
