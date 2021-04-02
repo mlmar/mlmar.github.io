@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/mlmar.github.io/static/css/main.9b0ac3d7.chunk.css",
+    "main.js": "/mlmar.github.io/static/js/main.750792ed.chunk.js",
+    "main.js.map": "/mlmar.github.io/static/js/main.750792ed.chunk.js.map",
+    "runtime-main.js": "/mlmar.github.io/static/js/runtime-main.5c935958.js",
+    "runtime-main.js.map": "/mlmar.github.io/static/js/runtime-main.5c935958.js.map",
+    "static/js/2.71ce4721.chunk.js": "/mlmar.github.io/static/js/2.71ce4721.chunk.js",
+    "static/js/2.71ce4721.chunk.js.map": "/mlmar.github.io/static/js/2.71ce4721.chunk.js.map",
+    "index.html": "/mlmar.github.io/index.html",
+    "precache-manifest.90fa312f23d7f4119494971382e3c556.js": "/mlmar.github.io/precache-manifest.90fa312f23d7f4119494971382e3c556.js",
+    "service-worker.js": "/mlmar.github.io/service-worker.js",
+    "static/css/main.9b0ac3d7.chunk.css.map": "/mlmar.github.io/static/css/main.9b0ac3d7.chunk.css.map",
+    "static/js/2.71ce4721.chunk.js.LICENSE.txt": "/mlmar.github.io/static/js/2.71ce4721.chunk.js.LICENSE.txt",
+    "static/media/Mail.png": "/mlmar.github.io/static/media/Mail.c4bd9291.png",
+    "static/media/block-mobile.gif": "/mlmar.github.io/static/media/block-mobile.f66f765a.gif",
+    "static/media/block-screen.gif": "/mlmar.github.io/static/media/block-screen.07f11f65.gif",
+    "static/media/App.css": "/mlmar.github.io/static/media/nunito-sans-v6-latin-regular.9c6a1ff2.woff2",
+    "static/media/tonedeaf-screen.png": "/mlmar.github.io/static/media/tonedeaf-screen.14bbab96.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5c935958.js",
+    "static/js/2.71ce4721.chunk.js",
+    "static/css/main.9b0ac3d7.chunk.css",
+    "static/js/main.750792ed.chunk.js"
+  ]
+}
