@@ -12,7 +12,7 @@ const About = () => {
         <Bold>Hi I'm Marcus</Bold>. I graduated from <Bold href="https://ucsd.edu/">UCSD</Bold> and I'm currently a software engineer at <Bold href="https://www.home.neustar/">Neustar</Bold>.
       </p>
       <section className="info">
-        <a href={"mailto:" + mail}> <div className="img-wrapper"> <img src="/images/mail.png"/> </div> <span> {mail} </span> </a>
+        <a href={"mailto:" + mail}> <div className="img-wrapper"> <img src="/images/email.png"/> </div> <span> {mail} </span> </a>
         <a href={"https://" + git}> <div className="img-wrapper"> <img src="/images/github.png"/> </div> <span> {git} </span> </a>
         <a href={"https://" + linkedin}> <div className="img-wrapper"> <img src="/images/linkedin.png"/> </div>  <span> {linkedin} </span></a>
       </section>
