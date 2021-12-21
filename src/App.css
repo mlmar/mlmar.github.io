@@ -85,6 +85,7 @@ h2 {
 .education h2,
 .education > * {
   margin-left: var(--inner);
+  margin-right: var(--inner);
 }
 
 .about {
