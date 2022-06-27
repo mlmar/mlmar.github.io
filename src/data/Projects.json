@@ -16,6 +16,13 @@
     "stack"       : ["ReactJs", "Node.JS", "MongoDB"]
   },
   {
+    "title"       : "Xordle",
+    "description" : "Play Wordle with friends on a timer",
+    "uri"         : "https://www.xordle.app",
+    "imgUri"      : "https://user-images.githubusercontent.com/63682846/166865439-e28574ea-1ff7-466e-8021-d3942d6b9bf3.png",
+    "stack"       : ["ReactJs", "Node.JS", "WebSocket"]
+  },
+  {
     "title"       : "Block",
     "description" : "Avoid being crushed by blocks in this simple game",
     "github"      : "https://github.com/mlmar/Block",
