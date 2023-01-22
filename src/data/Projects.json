@@ -2,7 +2,6 @@
   {
     "title"       : "Tonedeaf",
     "description" : "Sign in with Spotify to view your top artists/tracks and get recommendations",
-    "github"      : "https://github.com/mlmar/tonedeaf",
     "uri"         : "https://tonedeaf.vercel.app",
     "imgUri"      : "https://user-images.githubusercontent.com/63682846/146712273-12df6a1c-8d78-4e0e-b1d8-045c0b587425.png",
     "stack"       : ["ReactJs", "Node.JS"]
@@ -10,7 +9,7 @@
   {
     "title"       : "Avail",
     "description" : "Create a shared calendar where members can mark their availability",
-    "github"      : "https://github.com/mlmar/tonedeaf",
+    "github"      : "https://github.com/mlmar/avail",
     "uri"         : "https://avail.vercel.app",
     "imgUri"      : "https://user-images.githubusercontent.com/63682846/146715025-4a9a8724-bdf5-4435-a68c-7f508b5dbad8.png",
     "stack"       : ["ReactJs", "Node.JS", "MongoDB"]
