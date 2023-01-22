@@ -5,7 +5,7 @@ const Projects = () => {
     <section className="projects">
       <h2> Some of my projects </h2>
       {data.map((p, i) => <Project {...p} key={i}/>)}
-      <a className="repo" href="https://github.com/mlmar.github.io">
+      <a className="repo" href="https://github.com/mlmar/mlmar.github.io">
         <div className="img-wrapper">
           <img src="/images/github.png" alt="Github"/> 
         </div>
