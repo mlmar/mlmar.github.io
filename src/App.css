@@ -148,11 +148,19 @@ h2 {
 
 .projects .secondary-projects {
   display: flex;
-  justify-content: space-between;
 }
 
-.projects .secondary-projects .img-wrapper {
-  max-height: 40vh;
+.projects .secondary-projects > .project > .img-wrapper {
+  height: 40vh;
+  background: white;
+}
+
+.projects .secondary-projects > .project {
+  flex-basis: 50%;
+}
+
+.projects .secondary-projects > .project:not(:last-child) {
+  margin-right: 1rem;
 }
 
 .projects .project > .img-wrapper:hover {
