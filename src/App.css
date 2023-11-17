@@ -238,15 +238,8 @@ h2 {
     --small: 1rem;
   }
 
-  .app > *:not(:first-child) {
-    z-index: 99;
-  }
-
   .about {
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
+    height: 40rem;
     align-items: center;
     justify-content: center;
   }
@@ -270,10 +263,6 @@ h2 {
   
   .about .info span {
     display: none;
-  }
-
-  .projects {
-    margin-top: 100vh;
   }
   
   .projects .project > .img-wrapper {
