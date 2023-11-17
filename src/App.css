@@ -57,6 +57,7 @@ a[href] {
   position: relative;
   overflow: hidden;
   height: fit-content;
+  transition: transform .3s ease;
 }
 
 .img-wrapper img {
@@ -69,7 +70,9 @@ h2 {
 
 
 
-
+.app > *:last-child {
+  padding-bottom: var(--vertical);
+}
 
 .about, .projects, .education {
   display: flex;
@@ -111,6 +114,10 @@ h2 {
   margin-bottom: 1rem;
 }
 
+.about .info > *:hover .img-wrapper {
+  transform: scale(1.1);
+}
+
 .about .info span {
   margin-left: 1.4rem;
 }
@@ -128,7 +135,7 @@ h2 {
   background: var(--light);
 }
 
-.projects > *, .education > * {
+.projects > *:not(:last-child), .education > *:not(:last-child) {
   margin-bottom: var(--vertical);
 }
 
@@ -137,6 +144,15 @@ h2 {
   justify-content: center;
   margin-bottom: 1.5rem;
   transition: transform .3s ease;
+}
+
+.projects .secondary-projects {
+  display: flex;
+  justify-content: space-between;
+}
+
+.projects .secondary-projects .img-wrapper {
+  max-height: 40vh;
 }
 
 .projects .project > .img-wrapper:hover {
@@ -190,11 +206,6 @@ h2 {
 .projects .repo .img-wrapper {
   margin-right: 1rem;
   width: 2rem;
-}
-
-
-.education {
-  padding-bottom: var(--vertical);
 }
 
 .education > article {

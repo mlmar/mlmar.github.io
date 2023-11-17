@@ -4,7 +4,13 @@ const Projects = () => {
   return (
     <section className="projects">
       <h2> Some of my projects </h2>
-      {data.map((p, i) => <Project {...p} key={i}/>)}
+      {data.primary.map((p, i) => <Project {...p} key={i}/>)}
+
+      <h2> Mini Games </h2>
+      <div className="secondary-projects">
+        {data.secondary.map((p, i) => <Project {...p} key={i}/>)}
+      </div>
+
       <a className="repo" href="https://github.com/mlmar/mlmar.github.io">
         <div className="img-wrapper">
           <img src="/images/github.png" alt="Github"/> 

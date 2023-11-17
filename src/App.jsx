@@ -7,8 +7,8 @@ const App = () => {
   return (
     <main className="app">
       <About/>
-      <Projects/>
       <Education/>
+      <Projects/>
     </main>
   )
 }

@@ -1,24 +1,42 @@
-[
-  {
-    "title"       : "Tonedeaf",
-    "description" : "Sign in with Spotify to view your top artists/tracks and get recommendations",
-    "uri"         : "https://tonedeaf.vercel.app",
-    "imgUri"      : "https://user-images.githubusercontent.com/63682846/146712273-12df6a1c-8d78-4e0e-b1d8-045c0b587425.png",
-    "stack"       : ["ReactJs", "Node.JS"]
-  },
-  {
-    "title"       : "Avail",
-    "description" : "Create a shared calendar where members can mark their availability",
-    "github"      : "https://github.com/mlmar/avail",
-    "uri"         : "https://avail.vercel.app",
-    "imgUri"      : "https://user-images.githubusercontent.com/63682846/146715025-4a9a8724-bdf5-4435-a68c-7f508b5dbad8.png",
-    "stack"       : ["ReactJs", "Node.JS", "MongoDB"]
-  },
-  {
-    "title"       : "Xordle",
-    "description" : "Play Wordle with friends on a timer",
-    "uri"         : "https://www.xordle.app",
-    "imgUri"      : "https://user-images.githubusercontent.com/63682846/166865439-e28574ea-1ff7-466e-8021-d3942d6b9bf3.png",
-    "stack"       : ["ReactJs", "Node.JS", "WebSocket"]
-  }
-]
+{
+  "primary": [
+    {
+      "title"       : "tonedeaf",
+      "description" : "Sign in with Spotify to view your top artists/tracks and get recommendations",
+      "uri"         : "https://tonedeaf.vercel.app",
+      "imgUri"      : "https://user-images.githubusercontent.com/63682846/146712273-12df6a1c-8d78-4e0e-b1d8-045c0b587425.png",
+      "stack"       : ["ReactJs", "Node.JS"]
+    },
+    {
+      "title"       : "Avail",
+      "description" : "Create a shared calendar where members can mark their availability",
+      "github"      : "https://github.com/mlmar/avail",
+      "uri"         : "https://avail.vercel.app",
+      "imgUri"      : "https://user-images.githubusercontent.com/63682846/146715025-4a9a8724-bdf5-4435-a68c-7f508b5dbad8.png",
+      "stack"       : ["ReactJs", "Node.JS", "MongoDB"]
+    },
+    {
+      "title"       : "Xordle",
+      "description" : "Play Wordle against friends on a timer",
+      "uri"         : "https://www.xordle.app",
+      "imgUri"      : "https://user-images.githubusercontent.com/63682846/166865439-e28574ea-1ff7-466e-8021-d3942d6b9bf3.png",
+      "stack"       : ["ReactJs", "Node.JS", "WebSocket"]
+    }
+  ],
+  "secondary":[
+    {
+      "title"       : "multiply",
+      "github"      : "https://github.com/mlmar/multiply",
+      "uri"         : "https://mlmar.github.io/multiply",
+      "imgUri"      : "https://github.com/mlmar/multiply/assets/63682846/be69141d-db3b-4f3f-b6d5-18c7be50a74a",
+      "stack"       : ["jQuery"]
+    },
+    {
+      "title"       : "stop",
+      "github"      : "https://github.com/mlmar/stop",
+      "uri"         : "https://mlmar.github.io/stop",
+      "imgUri"      : "https://github.com/mlmar/stop/assets/63682846/cab4bdae-5520-4a87-b5f1-d5af207d5ece",
+      "stack"       : ["jQuery"]
+    }
+  ]
+}
