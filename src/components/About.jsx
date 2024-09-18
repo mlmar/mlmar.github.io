@@ -9,7 +9,7 @@ const About = () => {
         <img src="/images/m.ico"/>
       </div>
       <p> 
-        <Bold>Hi I'm Marcus</Bold>. I graduated from <Bold href="https://ucsd.edu/">UCSD</Bold> and I'm currently a software engineer at <Bold href="https://www.home.neustar/">Neustar</Bold>.
+        <Bold>Hi I'm Marcus</Bold>.
       </p>
       <section className="info">
         <a href={"mailto:" + mail}> <div className="img-wrapper"> <img src="/images/email.png"/> </div> <span> {mail} </span> </a>
