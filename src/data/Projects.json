@@ -4,7 +4,7 @@
       "title"       : "tonedeaf",
       "description" : "Sign in with Spotify to view your top artists/tracks and get recommendations",
       "uri"         : "https://tonedeaf.vercel.app",
-      "imgUri"      : "https://user-images.githubusercontent.com/63682846/146712273-12df6a1c-8d78-4e0e-b1d8-045c0b587425.png",
+      "imgUri"      : "/images/tonedeaf.png",
       "stack"       : ["ReactJs", "Node.JS"]
     },
     {
@@ -12,14 +12,14 @@
       "description" : "Create a shared calendar where members can mark their availability",
       "github"      : "https://github.com/mlmar/avail",
       "uri"         : "https://avail.vercel.app",
-      "imgUri"      : "https://user-images.githubusercontent.com/63682846/146715025-4a9a8724-bdf5-4435-a68c-7f508b5dbad8.png",
+      "imgUri"      : "/images/avail.png",
       "stack"       : ["React", "Node.js", "MongoDB"]
     },
     {
       "title"       : "Xordle",
       "description" : "Play Wordle against friends on a timer",
       "uri"         : "https://www.xordle.app",
-      "imgUri"      : "https://user-images.githubusercontent.com/63682846/166865439-e28574ea-1ff7-466e-8021-d3942d6b9bf3.png",
+      "imgUri"      : "/images/xordle.png",
       "stack"       : ["React", "Node.js", "WebSocket"]
     }
   ],
@@ -28,21 +28,21 @@
       "title"       : "orb",
       "github"      : "https://github.com/mlmar/orb",
       "uri"         : "https://mlmar.github.io/orb",
-      "imgUri"      : "https://github.com/user-attachments/assets/87729a51-ddfa-4f8e-b487-7b17eada4067",
+      "imgUri"      : "/images/orb.png",
       "stack"       : ["js", "Node.js", "MongoDB"]
     },
     {
       "title"       : "multiply",
       "github"      : "https://github.com/mlmar/multiply",
       "uri"         : "https://mlmar.github.io/multiply",
-      "imgUri"      : "https://github.com/user-attachments/assets/54c05653-041f-4ef7-8b08-13ba612fc358",
+      "imgUri"      : "/images/multiply.png",
       "stack"       : ["jQuery", "Node.js", "MongoDB"]
     },
     {
       "title"       : "stop",
       "github"      : "https://github.com/mlmar/stop",
       "uri"         : "https://mlmar.github.io/stop",
-      "imgUri"      : "https://github.com/mlmar/stop/assets/63682846/cab4bdae-5520-4a87-b5f1-d5af207d5ece",
+      "imgUri"      : "/images/stop.png",
       "stack"       : ["jQuery"]
     }
   ]
