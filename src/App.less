@@ -1,0 +1,295 @@
+/* START DEFAULTS */
+
+@import (css) 'https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap';
+
+:root {
+    --outter: 15vw;
+    --inner: 3vw;
+    --vertical: 6rem;
+    --dark: black;
+    --light: #eeeeee;
+
+    --large: 2rem;
+    --medium: 1.8rem;
+    --small: 1.2rem;
+}
+
+* {
+    font-family: Rubik !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.app {
+    .flex-col;
+    flex: 1 1;
+    min-height: 100%;
+    min-width: 100%;
+    background: black;
+}
+
+a[href] {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* END DEFAULTS */
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    .flex;
+    flex-direction: column;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.no-decor {
+    font-weight: 400;
+}
+
+.gray {
+    color: #666;
+}
+
+.img-wrapper {
+    .flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    transition: transform 0.3s ease;
+}
+
+.img-wrapper img {
+    width: 100%;
+}
+
+h2 {
+    font-size: var(--large);
+}
+
+.app > *:last-child {
+    padding-bottom: var(--vertical);
+}
+
+.about,
+.projects,
+.education {
+    .flex-col;
+    padding-top: var(--vertical);
+    padding-left: var(--outter);
+    padding-right: var(--outter);
+}
+
+.about > *,
+.projects h2,
+.projects .description,
+.education h2,
+.education > * {
+    margin-left: var(--inner);
+    margin-right: var(--inner);
+}
+
+.about {
+    color: var(--light);
+    padding-bottom: var(--vertical);
+
+    .logo {
+        margin-bottom: var(--vertical);
+        width: 6rem;
+        outline: 1px solid white;
+    }
+
+    h2 {
+        font-size: var(--large);
+        margin-bottom: var(--vertical);
+    }
+
+    .info {
+        > * {
+            .flex;
+            align-items: center;
+            font-size: var(--small);
+            margin-bottom: 1rem;
+
+            &:hover .img-wrapper {
+                transform: scale(1.1);
+            }
+        }
+
+        span {
+            margin-left: 1.4rem;
+        }
+
+        .img-wrapper {
+            width: 3rem;
+            filter: saturate(0) invert(1) brightness(2);
+        }
+    }
+}
+
+.projects,
+.education {
+    background: var(--light);
+
+    > *:not(:last-child) {
+        margin-bottom: var(--vertical);
+    }
+
+    .description,
+    > article {
+        .flex-col;
+        font-size: var(--small);
+        line-height: 160%;
+    }
+}
+
+.projects {
+    .project {
+        h3 {
+            .flex;
+            position: relative;
+            align-items: center;
+        }
+
+        > .img-wrapper {
+            max-height: 55vh;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+
+        .description .git {
+            position: absolute;
+            right: 0;
+            width: 2rem;
+            align-self: center;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .secondary-projects {
+        .flex;
+
+        > .project {
+            flex-basis: 50%;
+
+            > .img-wrapper {
+                height: 40vh;
+                background: white;
+
+                &::hover {
+                    transform: scale(1.02);
+                }
+            }
+
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    .stack-container {
+        .flex;
+        flex-wrap: wrap;
+
+        .stack:not(:last-child) {
+            margin-right: 2rem;
+        }
+
+        &.compact {
+            .flex-col;
+        }
+    }
+
+    .repo {
+        .flex;
+        align-items: center;
+        margin-left: var(--inner);
+        font-size: var(--small);
+
+        .img-wrapper {
+            margin-right: 1rem;
+            width: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover .img-wrapper {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.education > article {
+    .flex-col;
+}
+
+@media only screen and (max-width: 900px) {
+    :root {
+        --outter: 1rem;
+        --inner: 0vw;
+        --vertical: 4rem;
+        --dark: black;
+        --light: #eeeeee;
+
+        --large: 1.5rem;
+        --medium: 1.2rem;
+        --small: 1rem;
+    }
+
+    .about {
+        height: 40rem;
+        align-items: center;
+        justify-content: center;
+        p {
+            text-align: center;
+        }
+        .info {
+            .flex;
+            width: 100%;
+            justify-content: space-evenly;
+
+            > * {
+                .flex;
+                align-items: center;
+                font-size: var(--small);
+                margin-bottom: 1rem;
+            }
+
+            span {
+                display: none;
+            }
+        }
+    }
+
+    .projects .project {
+        > .img-wrapper {
+            max-height: 20vh;
+        }
+
+        .description .git {
+            width: 1.5rem;
+        }
+
+        .stack-container {
+            .flex-col;
+        }
+    }
+}

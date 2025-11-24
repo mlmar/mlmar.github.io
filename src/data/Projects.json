@@ -1,49 +1,49 @@
 {
-  "primary": [
-    {
-      "title"       : "tonedeaf",
-      "description" : "Sign in with Spotify to view your top artists/tracks and get recommendations",
-      "uri"         : "https://tonedeaf.vercel.app",
-      "imgUri"      : "/images/tonedeaf.png",
-      "stack"       : ["ReactJs", "Node.JS"]
-    },
-    {
-      "title"       : "Avail",
-      "description" : "Create a shared calendar where members can mark their availability",
-      "github"      : "https://github.com/mlmar/avail",
-      "uri"         : "https://avail.vercel.app",
-      "imgUri"      : "/images/avail.png",
-      "stack"       : ["React", "Node.js", "MongoDB"]
-    },
-    {
-      "title"       : "Xordle",
-      "description" : "Play Wordle against friends on a timer",
-      "uri"         : "https://www.xordle.app",
-      "imgUri"      : "/images/xordle.png",
-      "stack"       : ["React", "Node.js", "WebSocket"]
-    }
-  ],
-  "secondary":[
-    {
-      "title"       : "orb",
-      "github"      : "https://github.com/mlmar/orb",
-      "uri"         : "https://mlmar.github.io/orb",
-      "imgUri"      : "/images/orb.png",
-      "stack"       : ["js", "Node.js", "MongoDB"]
-    },
-    {
-      "title"       : "multiply",
-      "github"      : "https://github.com/mlmar/multiply",
-      "uri"         : "https://mlmar.github.io/multiply",
-      "imgUri"      : "/images/multiply.png",
-      "stack"       : ["jQuery", "Node.js", "MongoDB"]
-    },
-    {
-      "title"       : "stop",
-      "github"      : "https://github.com/mlmar/stop",
-      "uri"         : "https://mlmar.github.io/stop",
-      "imgUri"      : "/images/stop.png",
-      "stack"       : ["jQuery"]
-    }
-  ]
+    "primary": [
+        {
+            "title": "tonedeaf",
+            "description": "Sign in with Spotify to view your top artists/tracks and get recommendations",
+            "uri": "https://tonedeaf.vercel.app",
+            "imgUri": "/images/tonedeaf.png",
+            "stack": ["ReactJs", "Node.JS"]
+        },
+        {
+            "title": "Xordle",
+            "description": "Play Wordle against friends on a timer",
+            "uri": "https://www.xordle.app",
+            "imgUri": "/images/xordle.png",
+            "stack": ["React", "Node.js", "WebSocket"]
+        },
+        {
+            "title": "Avail",
+            "description": "Create a shared calendar where users can share their availability with others",
+            "github": "https://github.com/mlmar/avail",
+            "uri": "https://avail.vercel.app",
+            "imgUri": "/images/avail.png",
+            "stack": ["React", "Node.js", "MongoDB"]
+        }
+    ],
+    "secondary": [
+        {
+            "title": "orb",
+            "github": "https://github.com/mlmar/orb",
+            "uri": "https://mlmar.github.io/orb",
+            "imgUri": "/images/orb.png",
+            "stack": ["js", "Node.js", "MongoDB"]
+        },
+        {
+            "title": "multiply",
+            "github": "https://github.com/mlmar/multiply",
+            "uri": "https://mlmar.github.io/multiply",
+            "imgUri": "/images/multiply.png",
+            "stack": ["jQuery", "Node.js", "MongoDB"]
+        },
+        {
+            "title": "stop",
+            "github": "https://github.com/mlmar/stop",
+            "uri": "https://mlmar.github.io/stop",
+            "imgUri": "/images/stop.png",
+            "stack": ["jQuery"]
+        }
+    ]
 }
