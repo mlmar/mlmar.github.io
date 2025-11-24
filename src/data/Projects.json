@@ -3,6 +3,7 @@
         {
             "title": "tonedeaf",
             "description": "Sign in with Spotify to view your top artists/tracks and get recommendations",
+            "github": "https://github.com/mlmar/tonedeaf",
             "uri": "https://tonedeaf.vercel.app",
             "imgUri": "/images/tonedeaf.png",
             "stack": ["ReactJs", "Node.JS"]
@@ -10,6 +11,7 @@
         {
             "title": "Xordle",
             "description": "Play Wordle against friends on a timer",
+            "github": "https://github.com/mlmar/xordle",
             "uri": "https://www.xordle.app",
             "imgUri": "/images/xordle.png",
             "stack": ["React", "Node.js", "WebSocket"]
