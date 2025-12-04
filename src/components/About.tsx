@@ -11,7 +11,7 @@ export const About = () => {
             <section className='info'>
                 {aboutItems.map((item) => {
                     return (
-                        <a href={item.url}>
+                        <a href={item.url} key={item.url}>
                             <div className='img-wrapper'>
                                 <img src={item.icon} alt={item.type + ' icon'} />
                             </div>

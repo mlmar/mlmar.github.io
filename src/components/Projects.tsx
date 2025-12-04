@@ -21,7 +21,7 @@ export const Projects = () => {
             {renderProjects(projects.primary)}
 
             <h2> Mini Games </h2>
-            <div className='secondary-projects'>{renderProjects(projects.secondary)}</div>
+            <div className='secondary-projects'>{renderProjects(projects.secondary, true)}</div>
 
             <a className='repo' href='https://github.com/mlmar/mlmar.github.io'>
                 <div className='img-wrapper'>

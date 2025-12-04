@@ -7,7 +7,7 @@ export const Education = () => {
             <h2> Education </h2>
             <article>
                 <h3>
-                    University of California, San Diego <span className='no-decor'> (2018-2022) </span>
+                    University of California, San Diego <span className='no-decor'> (Dec 2021) </span>
                 </h3>
                 <label>
                     Cognitive Science B.S
