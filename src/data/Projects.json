@@ -6,7 +6,7 @@
             "github": "https://github.com/mlmar/tonedeaf",
             "uri": "https://tonedeaf.vercel.app",
             "imgUri": "/images/tonedeaf.png",
-            "stack": ["React", "Vitest", "Node.JS"]
+            "stack": ["React", "Vitest", "Node.js"]
         },
         {
             "title": "Xordle",
