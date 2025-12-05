@@ -46,7 +46,7 @@ const Project = (props: ProjectProps) => {
             </a>
             <div className='description'>
                 <h3>
-                    {title}
+                    <a href={uri}>{title}</a>
                     {github && (
                         <a className='git img-wrapper' href={github}>
                             <img src='/images/github.png' alt='Github' />
