@@ -2,11 +2,28 @@
     "primary": [
         {
             "title": "tonedeaf",
-            "description": "Sign in with Spotify to view your top artists/tracks and get recommendations",
+            "description": "Sign in with Spotify to view your top artists/tracks and get recommendations.",
             "github": "https://github.com/mlmar/tonedeaf",
             "uri": "https://tonedeaf.vercel.app",
             "imgUri": "/images/tonedeaf.png",
             "stack": ["React", "Vitest", "Node.js"]
+        },
+        {
+            "title": "WaiverWarrior (In Progress)",
+            "description": "View trending and underrated NBA players from the past 10 days. Statistics pulled from NBA API, BasketballReference and analyzed with Gemini API.",
+            "github": "https://github.com/mlmar/py-basketball",
+            "uri": "https://waiverwarrior.onrender.com/trending",
+            "imgUri": "/images/waiverwarrior.png",
+            "stack": [
+                "React",
+                "TanStack Query",
+                "TanStack Router",
+                "Zustand",
+                "Python",
+                "FastAPI",
+                "Gemini API",
+                "Supabase"
+            ]
         },
         {
             "title": "Xordle",
@@ -18,7 +35,7 @@
         },
         {
             "title": "Avail",
-            "description": "Create a shared calendar where users can share their availability with others",
+            "description": "Create a shared calendar where users can share their availability with others.",
             "github": "https://github.com/mlmar/avail",
             "uri": "https://avail.vercel.app",
             "imgUri": "/images/avail.png",
