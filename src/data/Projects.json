@@ -6,22 +6,23 @@
             "github": "https://github.com/mlmar/tonedeaf",
             "uri": "https://tonedeaf.vercel.app",
             "imgUri": "/images/tonedeaf.png",
-            "stack": ["React", "Vitest", "Node.js"]
+            "stack": ["React", "Vitest", "Zustand", "TanStack Query", "Node.js"]
         },
         {
             "title": "WaiverWarrior (In Progress)",
-            "description": "View trending and underrated NBA players from the past 10 days. Statistics pulled from NBA API, BasketballReference and analyzed with Gemini API.",
+            "description": "View trending and underrated NBA players from the past 10 days. Statistics and pulled from NBA API, Basketball-Reference, analyzed with Gemini API, and stored in Supabase.",
             "github": "https://github.com/mlmar/py-basketball",
             "uri": "https://waiverwarrior.onrender.com/trending",
             "imgUri": "/images/waiverwarrior.png",
             "stack": [
                 "React",
+                "Zustand",
                 "TanStack Query",
                 "TanStack Router",
-                "Zustand",
                 "Python",
-                "FastAPI",
                 "Gemini API",
+                "FastAPI",
+                "Selenium",
                 "Supabase"
             ]
         },
