@@ -7,8 +7,8 @@ export const App = () => {
     return (
         <main className='app'>
             <About />
-            <Education />
             <Projects />
+            <Education />
         </main>
     );
 };

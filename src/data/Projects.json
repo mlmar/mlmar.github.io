@@ -1,16 +1,8 @@
 {
     "primary": [
         {
-            "title": "tonedeaf",
-            "description": "Sign in with Spotify to view your top artists/tracks and get recommendations.",
-            "github": "https://github.com/mlmar/tonedeaf",
-            "uri": "https://tonedeaf.vercel.app",
-            "imgUri": "/images/tonedeaf.png",
-            "stack": ["React", "Vitest", "Zustand", "TanStack Query", "Node.js"]
-        },
-        {
             "title": "eli25",
-            "description": "Read daily AI generated summarized of science articles.",
+            "description": "Read daily AI generated summaries of science related news articles.",
             "github": "https://github.com/mlmar/eli25",
             "uri": "https://eli25.vercel.app",
             "imgUri": "/images/eli25.png",
@@ -27,8 +19,16 @@
             ]
         },
         {
+            "title": "tonedeaf",
+            "description": "Sign in with Spotify (or try the demo) to view your top artists/tracks and find new music.",
+            "github": "https://github.com/mlmar/tonedeaf",
+            "uri": "https://tonedeaf.vercel.app",
+            "imgUri": "/images/tonedeaf.png",
+            "stack": ["React", "Vitest", "Zustand", "TanStack Query", "Node.js"]
+        },
+        {
             "title": "Xordle",
-            "description": "Play Wordle against friends on a timer",
+            "description": "Play Wordle against friends on a timer.",
             "github": "https://github.com/mlmar/xordle",
             "uri": "https://www.xordle.app",
             "imgUri": "/images/xordle.png",

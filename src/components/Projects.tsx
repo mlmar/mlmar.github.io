@@ -17,7 +17,7 @@ type ProjectProps = {
 export const Projects = () => {
     return (
         <section className='projects'>
-            <h2> Some of my projects </h2>
+            <h2> Side Projects </h2>
             {renderProjects(projects.primary)}
 
             <h2> Mini Games </h2>
@@ -46,7 +46,9 @@ const Project = (props: ProjectProps) => {
             </a>
             <div className='description'>
                 <h3>
-                    <a href={uri}>{title}</a>
+                    <a className='flex flex-fit' href={uri}>
+                        {title}
+                    </a>
                     {github && (
                         <a className='git img-wrapper' href={github}>
                             <img src='/images/github.png' alt='Github' />

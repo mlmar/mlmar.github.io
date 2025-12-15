@@ -7,7 +7,13 @@ export const About = () => {
             <div className='img-wrapper logo'>
                 <img src='/images/m.ico' alt='M Icon' />
             </div>
-            <h2 className='bold'> Hi I'm Marcus. </h2>
+            <article className='summary'>
+                <h2 className='bold'> Hi I'm Marcus. </h2>
+                <p>
+                    I'm a full-stack software engineer with experience in React, Java, PL/SQL, and more. I'm currently
+                    exploring Python, FastAPI and AI models.
+                </p>
+            </article>
             <section className='info'>
                 {aboutItems.map((item) => {
                     return (
