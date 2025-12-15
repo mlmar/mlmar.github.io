@@ -9,6 +9,32 @@
             "stack": ["React", "Vitest", "Zustand", "TanStack Query", "Node.js"]
         },
         {
+            "title": "eli25",
+            "description": "Read daily AI generated summarized of science articles.",
+            "github": "https://github.com/mlmar/eli25",
+            "uri": "https://eli25.vercel.app",
+            "imgUri": "/images/eli25.png",
+            "stack": [
+                "React",
+                "TanStack Query",
+                "TailWind",
+                "Python",
+                "Hugging Face (AI Model)",
+                "FastAPI",
+                "PostgreSQL",
+                "Docker",
+                "Github Actions"
+            ]
+        },
+        {
+            "title": "Xordle",
+            "description": "Play Wordle against friends on a timer",
+            "github": "https://github.com/mlmar/xordle",
+            "uri": "https://www.xordle.app",
+            "imgUri": "/images/xordle.png",
+            "stack": ["React", "Node.js", "WebSocket"]
+        },
+        {
             "title": "WaiverWarrior (In Progress)",
             "description": "View trending and underrated NBA players from the past 10 days. Statistics and pulled from NBA API, analyzed with Gemini API, and stored results in Supabase.",
             "github": "https://github.com/mlmar/py-basketball",
@@ -22,16 +48,9 @@
                 "Python",
                 "Gemini API",
                 "FastAPI",
-                "Supabase"
+                "PostgreSQL",
+                "Docker"
             ]
-        },
-        {
-            "title": "Xordle",
-            "description": "Play Wordle against friends on a timer",
-            "github": "https://github.com/mlmar/xordle",
-            "uri": "https://www.xordle.app",
-            "imgUri": "/images/xordle.png",
-            "stack": ["React", "Node.js", "WebSocket"]
         },
         {
             "title": "Avail",
