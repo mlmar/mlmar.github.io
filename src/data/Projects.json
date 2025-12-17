@@ -38,7 +38,7 @@
             "title": "WaiverWarrior (In Progress)",
             "description": "View trending and underrated NBA players from the past 10 days. Statistics and pulled from NBA API, analyzed with Gemini API, and stored results in Supabase.",
             "github": "https://github.com/mlmar/py-basketball",
-            "uri": "https://waiverwarrior.onrender.com/trending",
+            "uri": "https://waiverwarrior.vercel.app/trending",
             "imgUri": "/images/waiverwarrior.png",
             "stack": [
                 "React",
