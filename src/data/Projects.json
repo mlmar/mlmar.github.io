@@ -9,6 +9,7 @@
             "stack": [
                 "React",
                 "TanStack Query",
+                "TanStack Router",
                 "TailWind",
                 "Python",
                 "Hugging Face (AI Model)",
