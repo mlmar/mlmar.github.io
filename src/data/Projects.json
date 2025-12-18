@@ -16,7 +16,7 @@
                 "FastAPI",
                 "PostgreSQL",
                 "Docker",
-                "Github Actions"
+                "GitHub Actions"
             ]
         },
         {
@@ -50,7 +50,8 @@
                 "Gemini API",
                 "FastAPI",
                 "PostgreSQL",
-                "Docker"
+                "Docker",
+                "GitHub Actions"
             ]
         },
         {
