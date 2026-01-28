@@ -8,7 +8,6 @@ export const App = () => {
         <main className='app'>
             <About />
             <Projects />
-            <Education />
         </main>
     );
 };
