@@ -25,7 +25,7 @@
             "description": "An interactive map for viewing real time global news from GDELT GEO 2.0 API",
             "github": "https://github.com/mlmar/newsmap-sooty",
             "uri": "https://newsmap-sooty.vercel.app",
-            "imgUri": "/images/eli25.png",
+            "imgUri": "/images/newsmap.png",
             "stack": ["Vue", "TypeScript", "Node.js", "Express"]
         },
         {
