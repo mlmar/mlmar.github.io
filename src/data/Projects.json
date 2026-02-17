@@ -26,7 +26,7 @@
             "github": "https://github.com/mlmar/newsmap",
             "uri": "https://newsmap-sooty.vercel.app",
             "imgUri": "/images/newsmap.png",
-            "stack": ["Vue", "TypeScript", "Node.js", "Express"]
+            "stack": ["Vue", "TypeScript", "Vue Leaflet", "Node.js", "Express"]
         },
         {
             "title": "tonedeaf",
