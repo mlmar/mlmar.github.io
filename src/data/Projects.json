@@ -8,6 +8,7 @@
             "imgUri": "/images/eli25.png",
             "stack": [
                 "React",
+                "TypeScript",
                 "TanStack Query",
                 "TanStack Router",
                 "TailWind",
@@ -18,6 +19,14 @@
                 "Docker",
                 "GitHub Actions"
             ]
+        },
+        {
+            "title": "News Map",
+            "description": "An interactive map for viewing real time global news from GDELT GEO 2.0 API",
+            "github": "https://github.com/mlmar/newsmap-sooty",
+            "uri": "https://newsmap-sooty.vercel.app",
+            "imgUri": "/images/eli25.png",
+            "stack": ["Vue", "TypeScript", "Node.js", "Express"]
         },
         {
             "title": "tonedeaf",
@@ -34,25 +43,6 @@
             "uri": "https://www.xordle.app",
             "imgUri": "/images/xordle.png",
             "stack": ["React", "Node.js", "WebSocket"]
-        },
-        {
-            "title": "WaiverWarrior (In Progress)",
-            "description": "View trending and underrated NBA players from the past 10 days. Statistics and pulled from NBA API, analyzed with Gemini API, and stored results in Supabase.",
-            "github": "https://github.com/mlmar/py-basketball",
-            "uri": "https://waiverwarrior.vercel.app/trending",
-            "imgUri": "/images/waiverwarrior.png",
-            "stack": [
-                "React",
-                "Zustand",
-                "TanStack Query",
-                "TanStack Router",
-                "Python",
-                "Gemini API",
-                "FastAPI",
-                "PostgreSQL",
-                "Docker",
-                "GitHub Actions"
-            ]
         },
         {
             "title": "Avail",
