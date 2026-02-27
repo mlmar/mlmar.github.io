@@ -22,7 +22,7 @@
         },
         {
             "title": "News Map",
-            "description": "An interactive map for viewing real time global news from GDELT GEO 2.0 API",
+            "description": "An interactive map for viewing real time global news from GDELT GEO 2.0 API.",
             "github": "https://github.com/mlmar/newsmap",
             "uri": "https://newsmap-sooty.vercel.app",
             "imgUri": "/images/newsmap.png",

@@ -11,7 +11,7 @@ export const About = () => {
                 <h2 className='bold'> Hi I'm Marcus. </h2>
                 <p>
                     I'm a full-stack software engineer with experience in React, Java, PL/SQL, and more. I'm currently
-                    exploring Python, FastAPI and AI models.
+                    exploring Vue, Python, FastAPI and LLMs.
                 </p>
             </article>
             <section className='info'>
