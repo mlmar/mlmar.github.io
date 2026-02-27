@@ -1,3 +1,5 @@
+import about from '../data/about.json';
+
 /**
  *  About header to display icon and contact information
  */
@@ -8,11 +10,8 @@ export const About = () => {
                 <img src='/images/m.ico' alt='M Icon' />
             </div>
             <article className='summary'>
-                <h2 className='bold'> Hi I'm Marcus. </h2>
-                <p>
-                    I'm a full-stack software engineer with experience in React, Java, PL/SQL, and more. I'm currently
-                    exploring Vue, Python, FastAPI and LLMs.
-                </p>
+                <h2 className='bold'> {about.title} </h2>
+                <p>{about.description}</p>
             </article>
             <section className='info'>
                 {aboutItems.map((item) => {

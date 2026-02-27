@@ -1,4 +1,4 @@
-import projects from '../data/Projects.json';
+import projects from '../data/projects.json';
 
 type ProjectProps = {
     title: string;
@@ -12,7 +12,7 @@ type ProjectProps = {
 };
 
 /**
- * Project section returns a list of projects by reading from Projects.json config
+ * Project section returns a list of projects by reading from projects.json config
  */
 export const Projects = () => {
     return (
@@ -56,13 +56,13 @@ const Project = (props: ProjectProps) => {
                     )}
                 </h3>
                 <p> {description} </p>
-                <div className={'stack-container' + (compact ? ' compact' : '')}>
+                <ul className={'stack-container' + (compact ? ' compact' : '')}>
                     {stack.map((s) => (
                         <label className='stack gray' key={s}>
                             {s}
                         </label>
                     ))}
-                </div>
+                </ul>
             </div>
         </article>
     );
