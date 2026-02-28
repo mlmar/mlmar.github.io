@@ -205,15 +205,17 @@ h2 {
             }
         }
 
-        .description .git {
-            position: absolute;
-            right: 0;
-            width: 2rem;
-            align-self: center;
-            transition: transform 0.3s ease;
+        .description {
+            > h3 {
+                justify-content: space-between;
+                .git {
+                    width: 1.5em;
+                    transition: transform 0.3s ease;
 
-            &:hover {
-                transform: scale(1.1);
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
             }
         }
     }
@@ -313,8 +315,12 @@ h2 {
                 max-height: 30vh;
             }
 
-            .description .git {
-                width: 1.5rem;
+            .description {
+                > h3 {
+                    .git {
+                        width: 1.5rem;
+                    }
+                }
             }
         }
     }
