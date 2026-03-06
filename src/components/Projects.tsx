@@ -18,7 +18,7 @@ export const Projects = () => {
     return (
         <section className='projects'>
             <h2> Side Projects </h2>
-            {renderProjects(projects.primary)}
+            {renderProjects(projects.primary as ProjectProps[])}
 
             <h2> Mini Games </h2>
             <div className='secondary-projects'>{renderProjects(projects.secondary, true)}</div>
