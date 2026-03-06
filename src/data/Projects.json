@@ -21,6 +21,13 @@
             ]
         },
         {
+            "title": "Resume + Job Description, Chrome Extension",
+            "description": "Upload your resume and compare with job descriptions using GitHub Models (Experimental, requires token).",
+            "github": "https://github.com/mlmar/resume-extension",
+            "imgUri": "/images/resume-extension.png",
+            "stack": ["Vue", "WXT", "PDFJS", "Github Models", "GitHub Actions"]
+        },
+        {
             "title": "News Map",
             "description": "An interactive map for viewing real time global news from GDELT GEO 2.0 API.",
             "github": "https://github.com/mlmar/newsmap",
