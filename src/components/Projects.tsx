@@ -46,7 +46,7 @@ const Project = (props: ProjectProps) => {
             </a>
             <div className='description'>
                 <h3>
-                    <a className='flex flex-fit' href={uri}>
+                    <a className='flex flex-fit' href={uri || github}>
                         {title}
                     </a>
                     {github && (
