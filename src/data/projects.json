@@ -21,11 +21,11 @@
             ]
         },
         {
-            "title": "Resume + Job Description Analysis Chrome Extension",
+            "title": "Resume + Job Analyzer",
             "description": "Upload your resume and compare with job descriptions using GitHub Models (Experimental, requires token).",
             "github": "https://github.com/mlmar/resume-analyzer",
             "imgUri": "/images/resume-extension.png",
-            "stack": ["Vue", "WXT", "PDFJS", "GitHub Models", "GitHub Actions"]
+            "stack": ["Vue", "WXT", "PDFJS", "GitHub Models", "GitHub Actions", "Chrome Extension"]
         },
         {
             "title": "News Map",
