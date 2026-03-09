@@ -23,6 +23,7 @@
         {
             "title": "Resume + Job Analyzer",
             "description": "Upload your resume and compare with job descriptions using GitHub Models (Experimental, requires token).",
+            "uri": "https://github.com/mlmar/resume-analyzer",
             "github": "https://github.com/mlmar/resume-analyzer",
             "imgUri": "/images/resume-extension.png",
             "stack": ["Vue", "WXT", "PDFJS", "GitHub Models", "GitHub Actions", "Chrome Extension"]
