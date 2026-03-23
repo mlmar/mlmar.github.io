@@ -38,12 +38,13 @@
                 "React",
                 "TypeScript",
                 "Shadcn",
-                "Node",
+                "Node.js",
                 "Express",
                 "PDFJS",
                 "GitHub Models API",
                 "GitHub Actions",
-                "Google Cloud Run"
+                "Google Cloud Run",
+                "Docker"
             ]
         },
         {
