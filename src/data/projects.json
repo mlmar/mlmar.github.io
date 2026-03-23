@@ -29,7 +29,7 @@
             "stack": ["Vue", "WXT", "PDFJS", "GitHub Models API", "GitHub Actions", "Chrome Extension"]
         },
         {
-            "title": "Scientific Article PDF Summarizer",
+            "title": "Scientific Article Summarizer",
             "description": "Upload a PDF and get concise, section by section summaries (GitHub Models rate limits may apply).",
             "uri": "https://mlmar.github.io/summarizer",
             "github": "https://github.com/mlmar/summarizer",
@@ -42,7 +42,8 @@
                 "Express",
                 "PDFJS",
                 "GitHub Models API",
-                "GitHub Actions"
+                "GitHub Actions",
+                "Google Cloud Run"
             ]
         },
         {
