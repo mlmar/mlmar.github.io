@@ -26,7 +26,24 @@
             "uri": "https://github.com/mlmar/resume-analyzer",
             "github": "https://github.com/mlmar/resume-analyzer",
             "imgUri": "/images/resume-extension.png",
-            "stack": ["Vue", "WXT", "PDFJS", "GitHub Models", "GitHub Actions", "Chrome Extension"]
+            "stack": ["Vue", "WXT", "PDFJS", "GitHub Models API", "GitHub Actions", "Chrome Extension"]
+        },
+        {
+            "title": "Scientific Article PDF Summarizer",
+            "description": "Upload a PDF and get concise, section by section summaries (GitHub Models rate limits may apply).",
+            "uri": "https://mlmar.github.io/summarizer",
+            "github": "https://github.com/mlmar/summarizer",
+            "imgUri": "/images/summarizer.png",
+            "stack": [
+                "React",
+                "TypeScript",
+                "Shadcn",
+                "Node",
+                "Express",
+                "PDFJS",
+                "GitHub Models API",
+                "GitHub Actions"
+            ]
         },
         {
             "title": "News Map",
