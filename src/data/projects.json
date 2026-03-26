@@ -22,7 +22,7 @@
         },
         {
             "title": "Resume + Job Analyzer",
-            "description": "Upload your resume and compare with job descriptions using GitHub Models (Experimental, requires token).",
+            "description": "Compare your resume with job descriptions using GitHub Models (Experimental, requires token).",
             "uri": "https://github.com/mlmar/resume-analyzer",
             "github": "https://github.com/mlmar/resume-analyzer",
             "imgUri": "/images/resume-extension.png",
