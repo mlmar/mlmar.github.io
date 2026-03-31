@@ -20,9 +20,9 @@ const { title, description, uri, github, imgUri, imgPath, stack, compact = false
         <p> {description} </p>
         <ul class={'stack-container' + (compact ? ' compact' : '')}>
             {stack.map((s: string) => (
-                <label class='stack gray'>
+                <li class='stack gray'>
                     {s}
-                </label>
+                </li>
             ))}
         </ul>
     </div>
