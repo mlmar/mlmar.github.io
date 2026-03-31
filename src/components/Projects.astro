@@ -15,12 +15,15 @@ type ProjectProps = {
 
 ---
 
-<section class='projects'>
-    <h2> Side Projects </h2>
-    {projects.primary.map((project: ProjectProps) => <Project {...project}/>)}
-
-    <h2> Mini Games </h2>
-    <div class='secondary-projects'>{projects.secondary.map((project: ProjectProps) => <Project {...project} compact/>)}</div>
+<main class='projects'>
+    <section class="flex-col">
+        <h2> Side Projects </h2>
+        {projects.primary.map((project: ProjectProps) => <Project {...project}/>)}
+    </section>
+    <section class="flex-col">
+        <h2> Mini Games </h2>
+        <div class='secondary-projects'>{projects.secondary.map((project: ProjectProps) => <Project {...project} compact/>)}</div>
+    </section>
 
     <a class='repo' href={projects.portfolio.uri}>
         <div class='img-wrapper'>
@@ -28,4 +31,4 @@ type ProjectProps = {
         </div>
         View the repo for this website
     </a>
-</section>
+</main>

@@ -95,6 +95,7 @@ a[href] {
     }
 }
 
+h1,
 h2 {
     font-size: var(--large);
 }
@@ -129,10 +130,6 @@ h2 {
         .flex-fill;
         gap: 1em;
         line-height: 1.5em;
-
-        h2 {
-            font-size: var(--large);
-        }
     }
 
     .info {
@@ -164,10 +161,13 @@ h2 {
     gap: var(--vertical);
 
     .description,
-    > article {
-        .flex-col;
-        font-size: var(--small);
-        line-height: 160%;
+    > section {
+        gap: var(--vertical);
+        article {
+            .flex-col;
+            font-size: var(--small);
+            line-height: 160%;
+        }
     }
 }
 
