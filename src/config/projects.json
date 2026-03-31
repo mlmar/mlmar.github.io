@@ -102,5 +102,8 @@
             "imgUri": "/images/stop.png",
             "stack": ["jQuery"]
         }
-    ]
+    ],
+    "portfolio": {
+        "uri": "https://github.com/mlmar/mlmar.github.io/tree/astro"
+    }
 }

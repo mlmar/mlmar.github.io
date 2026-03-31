@@ -22,7 +22,7 @@ type ProjectProps = {
     <h2> Mini Games </h2>
     <div class='secondary-projects'>{projects.secondary.map((project: ProjectProps) => <Project {...project} compact/>)}</div>
 
-    <a class='repo' href='https://github.com/mlmar/mlmar.github.io'>
+    <a class='repo' href={projects.portfolio.uri}>
         <div class='img-wrapper'>
             <img src='/images/github.png' alt='Github' />
         </div>
