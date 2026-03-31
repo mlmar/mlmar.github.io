@@ -1,0 +1,31 @@
+---
+import projects from '../config/projects.json';
+import Project from './Project.astro';
+
+type ProjectProps = {
+    title: string;
+    description?: string;
+    uri: string;
+    github?: string;
+    imgUri?: string;
+    imgPath?: string;
+    stack: string[];
+    compact?: boolean;
+};
+
+---
+
+<section class='projects'>
+    <h2> Side Projects </h2>
+    {projects.primary.map((project: ProjectProps) => <Project {...project}/>)}
+
+    <h2> Mini Games </h2>
+    <div class='secondary-projects'>{projects.secondary.map((project: ProjectProps) => <Project {...project} compact/>)}</div>
+
+    <a class='repo' href='https://github.com/mlmar/mlmar.github.io'>
+        <div class='img-wrapper'>
+            <img src='/images/github.png' alt='Github' />
+        </div>
+        View the repo for this website
+    </a>
+</section>

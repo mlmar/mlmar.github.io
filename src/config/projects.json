@@ -1,0 +1,106 @@
+{
+    "primary": [
+        {
+            "title": "eli25",
+            "description": "Read daily AI generated summaries of science related news articles.",
+            "github": "https://github.com/mlmar/eli25",
+            "uri": "https://eli25.vercel.app",
+            "imgUri": "/images/eli25.png",
+            "stack": [
+                "React",
+                "TypeScript",
+                "TanStack Query",
+                "TanStack Router",
+                "TailWind",
+                "Python",
+                "Hugging Face",
+                "FastAPI",
+                "PostgreSQL",
+                "Docker",
+                "GitHub Actions"
+            ]
+        },
+        {
+            "title": "Resume + Job Analyzer",
+            "description": "Compare your resume with job descriptions using GitHub Models (Experimental, requires token).",
+            "uri": "https://github.com/mlmar/resume-analyzer",
+            "github": "https://github.com/mlmar/resume-analyzer",
+            "imgUri": "/images/resume-extension.png",
+            "stack": ["Vue", "WXT", "PDFJS", "GitHub Models API", "GitHub Actions", "Chrome Extension"]
+        },
+        {
+            "title": "Scientific Article Summarizer",
+            "description": "Upload a PDF and get concise, section by section summaries (GitHub Models rate limits may apply).",
+            "uri": "https://mlmar.github.io/summarizer",
+            "github": "https://github.com/mlmar/summarizer",
+            "imgUri": "/images/summarizer.png",
+            "stack": [
+                "React",
+                "TypeScript",
+                "Shadcn",
+                "Node.js",
+                "Express",
+                "PDFJS",
+                "GitHub Models API",
+                "GitHub Actions",
+                "Google Cloud Run",
+                "Docker"
+            ]
+        },
+        {
+            "title": "News Map",
+            "description": "An interactive map for viewing real time global news from GDELT GEO 2.0 API.",
+            "github": "https://github.com/mlmar/newsmap",
+            "uri": "https://newsmap-sooty.vercel.app",
+            "imgUri": "/images/newsmap.png",
+            "stack": ["Vue", "TypeScript", "Vue Leaflet", "Node.js", "Express"]
+        },
+        {
+            "title": "tonedeaf",
+            "description": "Sign in with Spotify (or try the demo) to view your top artists/tracks and find new music.",
+            "github": "https://github.com/mlmar/tonedeaf",
+            "uri": "https://tonedeaf.vercel.app",
+            "imgUri": "/images/tonedeaf.png",
+            "stack": ["React", "Vitest", "Zustand", "TanStack Query", "Node.js"]
+        },
+        {
+            "title": "Xordle",
+            "description": "Play Wordle against friends on a timer.",
+            "github": "https://github.com/mlmar/xordle",
+            "uri": "https://www.xordle.app",
+            "imgUri": "/images/xordle.png",
+            "stack": ["React", "Node.js", "WebSocket"]
+        },
+        {
+            "title": "Avail",
+            "description": "Create a shared calendar where users can share their availability with others.",
+            "github": "https://github.com/mlmar/avail",
+            "uri": "https://avail.vercel.app",
+            "imgUri": "/images/avail.png",
+            "stack": ["React", "Node.js", "MongoDB"]
+        }
+    ],
+    "secondary": [
+        {
+            "title": "orb",
+            "github": "https://github.com/mlmar/orb",
+            "uri": "https://mlmar.github.io/orb",
+            "imgUri": "/images/orb.png",
+            "stack": ["js", "Node.js", "MongoDB"]
+        },
+        {
+            "title": "multiply",
+            "github": "https://github.com/mlmar/multiply",
+            "uri": "https://mlmar.github.io/multiply",
+            "imgUri": "/images/multiply.png",
+            "stack": ["jQuery", "Node.js", "MongoDB"]
+        },
+        {
+            "title": "stop",
+            "github": "https://github.com/mlmar/stop",
+            "uri": "https://mlmar.github.io/stop",
+            "imgUri": "/images/stop.png",
+            "stack": ["jQuery"]
+        }
+    ]
+}

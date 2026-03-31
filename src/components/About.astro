@@ -1,0 +1,29 @@
+---
+/**
+ *  About header to display icon and contact information
+ */
+import about from '../config/about.json';
+
+---
+
+<header class='about'>
+    <div class='img-wrapper logo'>
+        <img src='/images/m.ico' alt='M Icon' />
+    </div>
+    <article class='summary'>
+        <h2 class='bold'> {about.title} </h2>
+        <p>{about.description}</p>
+    </article>
+    <section class='info'>
+        {about.items.map((item) => {
+            return (
+                <a href={item.url}>
+                    <div class='img-wrapper'>
+                        <img src={item.icon} alt={item.type + ' icon'} />
+                    </div>
+                    <span> {item.label} </span>
+                </a>
+            );
+        })}
+    </section>
+</header>

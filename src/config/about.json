@@ -1,0 +1,24 @@
+{
+    "title": "Hi, I'm Marcus",
+    "description": "I'm a full-stack software engineer with experience in React, Java, PL/SQL, and more. I'm currently exploring Vue, Python, FastAPI and LLMs.",
+    "items": [
+        {
+            "label": "martinezmarcus240@gmail.com",
+            "url": "mailto:martinezmarcus240@gmail.com",
+            "icon": "/images/email.png",
+            "type": "email"
+        },
+        {
+            "label": "github.com/mlmar",
+            "url": "https://github.com/mlmar",
+            "icon": "/images/github.png",
+            "type": "Github"
+        },
+        {
+            "label": "linkedin.com/in/martinez-marcus",
+            "url": "https://linkedin.com/in/martinez-marcus",
+            "icon": "/images/linkedin.png",
+            "type": "LinkedIn"
+        }
+    ]
+}
