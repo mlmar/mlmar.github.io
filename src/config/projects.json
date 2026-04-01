@@ -48,12 +48,12 @@
             ]
         },
         {
-            "title": "News Map",
-            "description": "An interactive map for viewing real time global news from GDELT GEO 2.0 API.",
-            "github": "https://github.com/mlmar/newsmap",
-            "uri": "https://newsmap-sooty.vercel.app",
-            "imgUri": "/images/newsmap.png",
-            "stack": ["Vue", "TypeScript", "Vue Leaflet", "Node.js", "Express"]
+            "title": "Xordle",
+            "description": "Play Wordle against friends on a timer.",
+            "github": "https://github.com/mlmar/xordle",
+            "uri": "https://www.xordle.app",
+            "imgUri": "/images/xordle.png",
+            "stack": ["React", "Node.js", "WebSocket"]
         },
         {
             "title": "tonedeaf",
@@ -64,13 +64,14 @@
             "stack": ["React", "Vitest", "Zustand", "TanStack Query", "Node.js"]
         },
         {
-            "title": "Xordle",
-            "description": "Play Wordle against friends on a timer.",
-            "github": "https://github.com/mlmar/xordle",
-            "uri": "https://www.xordle.app",
-            "imgUri": "/images/xordle.png",
-            "stack": ["React", "Node.js", "WebSocket"]
+            "title": "News Map",
+            "description": "An interactive map for viewing real time global news from GDELT GEO 2.0 API.",
+            "github": "https://github.com/mlmar/newsmap",
+            "uri": "https://newsmap-sooty.vercel.app",
+            "imgUri": "/images/newsmap.png",
+            "stack": ["Vue", "TypeScript", "Vue Leaflet", "Node.js", "Express"]
         },
+
         {
             "title": "Avail",
             "description": "Create a shared calendar where users can share their availability with others.",
