@@ -8,7 +8,7 @@ import about from '../config/about.json';
 
 <header class='about'>
     <div class='img-wrapper logo'>
-        <img src='/images/m.ico' alt='M Icon' />
+        <img src='/icons/m.ico' alt='M Icon' loading="eager"/>
     </div>
     <article class='summary'>
         <h1 class='bold'> {about.title} </h1>
@@ -19,7 +19,7 @@ import about from '../config/about.json';
             return (
                 <a href={item.url}>
                     <div class='img-wrapper'>
-                        <img src={item.icon} alt={item.type + ' icon'} />
+                        <img src={item.icon} alt={item.type + ' icon'} loading="eager"/>
                     </div>
                     <span> {item.label} </span>
                 </a>

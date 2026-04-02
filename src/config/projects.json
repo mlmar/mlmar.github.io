@@ -5,7 +5,7 @@
             "description": "Read daily AI generated summaries of science related news articles.",
             "github": "https://github.com/mlmar/eli25",
             "uri": "https://eli25.vercel.app",
-            "imgUri": "/images/eli25.png",
+            "imgUri": "/images/eli25.webp",
             "stack": [
                 "React",
                 "TypeScript",
@@ -25,7 +25,7 @@
             "description": "Compare your resume with job descriptions using GitHub Models (Experimental, requires token).",
             "uri": "https://github.com/mlmar/resume-analyzer",
             "github": "https://github.com/mlmar/resume-analyzer",
-            "imgUri": "/images/resume-extension.png",
+            "imgUri": "/images/resume-extension.webp",
             "stack": ["Vue", "WXT", "PDFJS", "GitHub Models API", "GitHub Actions", "Chrome Extension"]
         },
         {
@@ -33,7 +33,7 @@
             "description": "Upload a PDF and get concise, section by section summaries (GitHub Models rate limits may apply).",
             "uri": "https://mlmar.github.io/summarizer",
             "github": "https://github.com/mlmar/summarizer",
-            "imgUri": "/images/summarizer.png",
+            "imgUri": "/images/summarizer.webp",
             "stack": [
                 "React",
                 "TypeScript",
@@ -52,7 +52,7 @@
             "description": "Play Wordle against friends on a timer.",
             "github": "https://github.com/mlmar/xordle",
             "uri": "https://www.xordle.app",
-            "imgUri": "/images/xordle.png",
+            "imgUri": "/images/xordle.webp",
             "stack": ["React", "Node.js", "WebSocket"]
         },
         {
@@ -60,7 +60,7 @@
             "description": "Sign in with Spotify (or try the demo) to view your top artists/tracks and find new music.",
             "github": "https://github.com/mlmar/tonedeaf",
             "uri": "https://tonedeaf.vercel.app",
-            "imgUri": "/images/tonedeaf.png",
+            "imgUri": "/images/tonedeaf.webp",
             "stack": ["React", "Vitest", "Zustand", "TanStack Query", "Node.js"]
         },
         {
@@ -68,7 +68,7 @@
             "description": "An interactive map for viewing real time global news from GDELT GEO 2.0 API.",
             "github": "https://github.com/mlmar/newsmap",
             "uri": "https://newsmap-sooty.vercel.app",
-            "imgUri": "/images/newsmap.png",
+            "imgUri": "/images/newsmap.webp",
             "stack": ["Vue", "TypeScript", "Vue Leaflet", "Node.js", "Express"]
         },
 
@@ -77,7 +77,7 @@
             "description": "Create a shared calendar where users can share their availability with others.",
             "github": "https://github.com/mlmar/avail",
             "uri": "https://avail.vercel.app",
-            "imgUri": "/images/avail.png",
+            "imgUri": "/images/avail.webp",
             "stack": ["React", "Node.js", "MongoDB"]
         }
     ],
@@ -86,21 +86,21 @@
             "title": "orb",
             "github": "https://github.com/mlmar/orb",
             "uri": "https://mlmar.github.io/orb",
-            "imgUri": "/images/orb.png",
+            "imgUri": "/images/orb.webp",
             "stack": ["js", "Node.js", "MongoDB"]
         },
         {
             "title": "multiply",
             "github": "https://github.com/mlmar/multiply",
             "uri": "https://mlmar.github.io/multiply",
-            "imgUri": "/images/multiply.png",
+            "imgUri": "/images/multiply.webp",
             "stack": ["jQuery", "Node.js", "MongoDB"]
         },
         {
             "title": "stop",
             "github": "https://github.com/mlmar/stop",
             "uri": "https://mlmar.github.io/stop",
-            "imgUri": "/images/stop.png",
+            "imgUri": "/images/stop.webp",
             "stack": ["jQuery"]
         }
     ],
