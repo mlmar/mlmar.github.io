@@ -53,7 +53,7 @@
             "github": "https://github.com/mlmar/xordle",
             "uri": "https://www.xordle.app",
             "imgUri": "/images/xordle.webp",
-            "stack": ["React", "Node.js", "WebSocket"]
+            "stack": ["React", "Node.js", "WebSocket", "Google Cloud Run", "Docker"]
         },
         {
             "title": "tonedeaf",
