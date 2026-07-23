@@ -1,4 +1,4 @@
-name: Build Astro Output
+name: Build V2 Astro Output
 
 on:
     push:
