@@ -1,0 +1,26 @@
+[
+    {
+        "id": "ucsd",
+        "start": "2018",
+        "end": "2021",
+        "title": "student",
+        "product": "B.S. Cogntive Science",
+        "company": "UCSD"
+    },
+    {
+        "id": "tu",
+        "start": "2021",
+        "end": "2025",
+        "title": "Software Engineer",
+        "product": "Consumer Insights",
+        "company": "TransUnion"
+    },
+    {
+        "id": "pc",
+        "start": "2018",
+        "end": "2021",
+        "title": "Frontend Software Engineer",
+        "product": "OmniWatch",
+        "company": "PeopleConnect"
+    }
+]

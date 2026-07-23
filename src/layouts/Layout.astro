@@ -1,3 +1,6 @@
+---
+import '../pages/index.less';
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,11 +11,21 @@
 		<meta name="generator" content={Astro.generator} />
 		<meta name="decsription" content="mlmar.github.io" />
 		<title> Marcus Martinez </title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	</head>
-	<body>
-		<slot />
+	<body class="flex-col">
+		<main class="flex-col">
+			<slot />
+		</main>
 	</body>
 </html>
 
 <style>
+	main {
+		padding: var(--padding);
+		flex: 1;
+	}
 </style>

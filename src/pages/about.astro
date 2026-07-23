@@ -1,0 +1,72 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import BackButton from "../components/BackButton.astro";
+
+const historyCollection = await getCollection('history');
+
+---
+
+<Layout>
+    <ul class="flex-col">
+        {
+            historyCollection.map(({ data }) => {
+                return (
+                    <li class="flex-col">
+                        <h2> {data.start}&mdash;{data.end} </h2> 
+                        <p> {data.title} </p>
+                        <p> {data.product} | {data.company} </p>
+                    </li>
+                );
+            })
+        }
+    </ul>
+	<BackButton/>
+</Layout>
+
+<style>
+    :global(main) {
+        justify-content: space-between;
+    }
+
+    ul {
+        --dot-size: 0.65rem;
+        --list-gap: 5rem;
+
+        list-style: none;
+        gap: var(--list-gap);
+
+    }
+
+    li {
+        gap: 0.35rem;
+        font-weight: 300;
+        position: relative;
+        padding-left: 2rem;
+    }
+
+    li:before {
+        content: ' ';
+        position: absolute;
+        width: var(--dot-size);
+        height: var(--dot-size);
+        border-radius: 100%;
+        background: var(--text-secondary);
+        left: 0;
+        top: var(--dot-size);
+    }
+    li:not(:last-child):after {
+        content: ' ';
+        position: absolute;
+        width: 0.1rem;
+        height: calc(75% + var(--list-gap));
+        left: calc(var(--dot-size) / 2);
+        top: calc(var(--dot-size) * 2);
+        background: black;
+        transform: translateX(-50%);
+    }
+
+    h2 {
+        font-weight: 500;
+    }
+</style>
