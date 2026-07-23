@@ -1,18 +1,18 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
+import Work from '../components/Work.astro';
+import Projects from '../components/Projects.astro';
 ---
 
 <Layout>
 	<h1> hey i'm Marcus </h1>
-	<nav class="flex-col">
-		<a href="/about">about</a>
-		<a href="/projects">
-			projects
-		</a>
-		<a href="creative">
-			creative
-		</a>
-	</nav>
+	<section class="flex-col">
+		<h2> work </h2>
+		<Work/>
+	</section>
+	<section class="flex-col">
+		<h2> projects </h2>
+	</section>
 </Layout>
 
 <script>
@@ -35,11 +35,8 @@ import Layout from "../layouts/Layout.astro";
         line-height: 3.75rem;
         font-weight: 400;
     }
-    nav {
-        gap: 1rem;
-    }
-    a {
-        font-size: 3rem;
-		width: fit-content;
-    }
+
+	section {
+		gap: 0.5rem;
+	}
 </style>

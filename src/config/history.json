@@ -3,8 +3,7 @@
         "id": "ucsd",
         "start": "2018",
         "end": "2021",
-        "title": "student",
-        "product": "B.S. Cogntive Science",
+        "title": "B.S. Cogntive Science",
         "company": "UCSD"
     },
     {
@@ -17,8 +16,8 @@
     },
     {
         "id": "pc",
-        "start": "2018",
-        "end": "2021",
+        "start": "2026",
+        "end": "Present",
         "title": "Frontend Software Engineer",
         "product": "OmniWatch",
         "company": "PeopleConnect"

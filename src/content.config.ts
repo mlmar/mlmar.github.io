@@ -8,24 +8,24 @@ const history = defineCollection({
         start: z.string(),
         end: z.string(),
         title: z.string(),
-        product: z.string(),
+        product: z.string().optional(),
         company: z.string()
     })
 });
 
-const projects = defineCollection({
-    loader: file('./src/config/projects.json'),
-    schema: z.object({
-        title: z.string(),
-        description: z.string(),
-        github: z.string(),
-        uri: z.string(),
-        imgUri: z.string(),
-        stack: z.array(z.string()),
-    })
-})
+// const projects = defineCollection({
+//     loader: file('./src/config/projects.json'),
+//     schema: z.object({
+//         title: z.string(),
+//         description: z.string(),
+//         github: z.string(),
+//         uri: z.string(),
+//         imgUri: z.string(),
+//         stack: z.array(z.string()),
+//     })
+// })
 
 export const collections = {
     history,
-    projects
+    // projects
 }
