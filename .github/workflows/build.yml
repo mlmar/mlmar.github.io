@@ -2,7 +2,7 @@ name: Build V2 Astro Output
 
 on:
     push:
-        branches: [astro]
+        branches: [v2/astro]
     workflow_dispatch:
 
 jobs:
