@@ -21,7 +21,8 @@ const music = defineCollection({
         src: z.string(),
         title: z.string(),
         url: z.string(),
-        image: z.string()
+        image: z.string(),
+        startTime: z.number()
     })
 })
 

@@ -4,48 +4,55 @@
         "src": "coup 106bpm",
         "title": "coup 106bpm",
         "url": "https://soundcloud.com/user-351173009/coup-106bpm-1/s-dXgECBgNuVs?in=user-351173009/sets/wav/s-OkQxc9rvbbU&si=a67afa2ca66b4485ab9bd0718811f61f&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-        "image": "plane.png"
+        "image": "plane.png",
+        "startTime": 0
     },
     {
         "id": "m2",
         "src": "march 80bpm",
         "title": "march 80bpm",
         "url": "https://soundcloud.com/user-351173009/march-80bpm?in=user-351173009/sets/wav/s-OkQxc9rvbbU&si=1ad4927c6ad24346ba1603832e3a742b&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-        "image": "belmont.png"
+        "image": "belmont.png",
+        "startTime": 0
     },
     {
         "id": "m3",
         "src": "december 70bpm",
         "title": "december 70bpm",
         "url": "https://soundcloud.com/user-351173009/december-70bpm-6/s-6Pe6hSKdVbI?in=user-351173009/sets/wav/s-OkQxc9rvbbU&si=9fa0a38f16b44c72b364336a343ddcfc&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-        "image": "mountain.png"
+        "image": "mountain.png",
+        "startTime": 3
     },
     {
         "id": "m4",
         "src": "defenestrate 84bpm",
         "title": "defenestrate 84bpm",
         "url": "https://soundcloud.com/user-351173009/defenestrate-84bpm-5/s-6H5gTy2ETNR?in=user-351173009/sets/wav/s-OkQxc9rvbbU&si=37f92ad4b3934f0a8fea6981d8130563&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-        "image": "italy.png"
+        "image": "italy.png",
+        "startTime": 3
     },
     {
         "id": "m5",
         "src": "icarus 78bpm",
         "title": "icarus 78bpm",
         "url": "https://soundcloud.com/user-351173009/icarus-78bpm-3/s-o9TO9VU4Gg4?in=user-351173009/sets/wav/s-OkQxc9rvbbU&si=a58e4bd9462a4a559c01ed5d6ec9a039&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-        "image": "feet.png"
+        "image": "feet.png",
+        "startTime": 2
     },
     {
         "id": "m6",
         "src": "echo 70bpm",
         "title": "echo 70bpm",
         "url": "https://soundcloud.com/user-351173009/echo-70bpm/s-bPODqwYZb1G?in=user-351173009/sets/wav/s-OkQxc9rvbbU&si=da1f3cae9dd643b9afb9d75397214103&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-        "image": "death-valley.png"
+        "image": "death-valley.png",
+        "startTime": 0
     },
     {
         "id": "m7",
         "src": "ueno 78bpm",
         "title": "ueno 78bpm",
         "url": "https://soundcloud.com/user-351173009/ueno-78bpm-2/s-1MsS4Pd2AQF?in=user-351173009/sets/wav/s-OkQxc9rvbbU&si=2b42dfd835794f6ca87cb5904b3c57b0&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-        "image": "ueno.png"
+        "image": "ueno.png",
+        "startTime": 2
     }
 ]

@@ -64,7 +64,12 @@ const optimizedTracks = await Promise.all(
                         <img src={soundcloudIcon.src} alt='SoundCloud logo' />
                     </a>
                 </div>
-                <audio class='audio-element hidden' src={`/music/${data.src}.webm`} preload='none' />
+                <audio
+                    class='audio-element hidden'
+                    src={`/music/${data.src}.webm`}
+                    preload='none'
+                    data-start-time={data.startTime}
+                />
             </li>
         ))
     }
@@ -72,6 +77,7 @@ const optimizedTracks = await Promise.all(
 
 <script>
     const trackCards = document.querySelectorAll<HTMLLIElement>('.track-card');
+    const hasPlayed: Map<HTMLAudioElement, boolean> = new Map();
 
     trackCards.forEach((card) => {
         const coverContainer = card.querySelector('.album-cover-container');
@@ -94,6 +100,11 @@ const optimizedTracks = await Promise.all(
                         otherAudio.pause();
                     }
                 });
+                // if track is being played from scratch, set to start time
+                if (!hasPlayed.get(audio)) {
+                    hasPlayed.set(audio, true);
+                    audio.currentTime = Number(audio.dataset.startTime);
+                }
                 audio.play();
             } else {
                 audio.pause();
@@ -130,6 +141,7 @@ const optimizedTracks = await Promise.all(
         audio.addEventListener('ended', () => {
             playIcon.classList.remove('hidden');
             pauseIcon.classList.add('hidden');
+            hasPlayed.delete(audio);
         });
     });
 </script>
