@@ -5,19 +5,19 @@
         {
             "label": "martinezmarcus240@gmail.com",
             "url": "mailto:martinezmarcus240@gmail.com",
-            "icon": "/icons/email.webp",
+            "icon": "email.webp",
             "type": "email"
         },
         {
             "label": "linkedin.com/in/martinez-marcus",
             "url": "https://linkedin.com/in/martinez-marcus",
-            "icon": "/icons/linkedin.webp",
+            "icon": "linkedin.webp",
             "type": "LinkedIn"
         },
         {
             "label": "github.com/mlmar",
             "url": "https://github.com/mlmar",
-            "icon": "/icons/github.webp",
+            "icon": "github.webp",
             "type": "Github"
         }
     ]
