@@ -9,7 +9,9 @@ import about from '../config/about.json';
 <Layout>
     <!-- Hero -->
     <header class='hero fade-item'>
-        <h1>hey i'm<br />Marcus</h1>
+        <h1>
+            hey i'm<br />Marcus
+        </h1>
         <nav class='contact-links'>
             {
                 about.items.map((item) => (
@@ -89,7 +91,7 @@ import about from '../config/about.json';
     }
 
     h1 {
-        font-size: clamp(3rem, 8vw, 5rem);
+        font-size: var(--spacing-xl);
         line-height: 1;
         font-weight: 400;
         letter-spacing: -0.02em;
@@ -113,7 +115,7 @@ import about from '../config/about.json';
     }
 
     .contact-item:hover {
-        color: var(--text-secondary);
+        color: var(--color-secondary);
     }
 
     .contact-item img {
@@ -133,7 +135,7 @@ import about from '../config/about.json';
     .section-label {
         font-size: var(--text-sm);
         font-weight: var(--weight-regular);
-        letter-spacing: var(--tracking-wide);
+        letter-spacing: var(--tracking-lg);
         text-transform: uppercase;
         color: var(--color-subtle);
     }
