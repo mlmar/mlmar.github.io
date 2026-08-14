@@ -9,7 +9,8 @@ const history = defineCollection({
         end: z.string(),
         title: z.string(),
         product: z.string().optional(),
-        company: z.string()
+        company: z.string(),
+        images: z.array(z.string()).optional()
     })
 });
 
@@ -19,6 +20,7 @@ const music = defineCollection({
         id: z.string(),
         src: z.string(),
         title: z.string(),
+        url: z.string(),
     })
 })
 

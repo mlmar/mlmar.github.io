@@ -9,25 +9,24 @@ type ProjectProps = {
     github?: string;
     imgUri?: string;
     imgPath?: string;
-    stack: string[];
     compact?: boolean;
 };
 ---
 
-<div class="projects-wrapper flex-col">
-    <div class="projects-grid primary-grid">
-        {projects.primary.map((project: ProjectProps) => <Project {...project}/>)}
+<div class='projects-wrapper flex-col'>
+    <div class='projects-grid primary-grid'>
+        {projects.primary.map((project: ProjectProps) => <Project {...project} />)}
     </div>
 
-    <div class="secondary-section flex-col">
-        <h3 class="sub-label">mini</h3>
-        <div class="projects-grid secondary-grid">
-            {projects.secondary.map((project: ProjectProps) => <Project {...project} compact/>)}
+    <div class='secondary-section flex-col'>
+        <h3 class='sub-label'>mini</h3>
+        <div class='projects-grid secondary-grid'>
+            {projects.secondary.map((project: ProjectProps) => <Project {...project} compact />)}
         </div>
     </div>
 
-    <a class="repo-link" href={projects.portfolio.uri}>
-        <img src="/icons/github.webp" alt="" aria-hidden="true" />
+    <a class='repo-link' href={projects.portfolio.uri}>
+        <img src='/icons/github.webp' alt='' aria-hidden='true' />
         <span>view portfolio source</span>
     </a>
 </div>

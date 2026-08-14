@@ -1,26 +1,63 @@
 ---
 import { getCollection } from 'astro:content';
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 
 const historyCollection = await getCollection('history');
+
+// Dynamically import all images in src/assets
+const allImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif,svg,webp}');
+
+const historyWithImages = await Promise.all(
+    historyCollection.map(async (item) => {
+        const imagePaths = item.data.images || [];
+        const optimizedImages = await Promise.all(
+            imagePaths.map(async (imgName) => {
+                const matchKey = Object.keys(allImages).find((key) => key.endsWith(imgName));
+                if (!matchKey) {
+                    console.warn(`Could not find asset for: ${imgName}`);
+                    return null;
+                }
+                const imageModule = await allImages[matchKey]();
+                const isSvg = imgName.toLowerCase().endsWith('.svg');
+                const optimized = await getImage({
+                    src: imageModule.default,
+                    format: isSvg ? 'svg' : 'webp',
+                });
+                return optimized.src;
+            }),
+        );
+        return {
+            ...item,
+            optimizedImages: optimizedImages.filter(Boolean) as string[],
+        };
+    }),
+);
 ---
 
 <ul class='flex-col work-list'>
     {
-        historyCollection.map(({ data }) => {
+        historyWithImages.map(({ data, optimizedImages }) => {
             return (
-                <li class='flex-col fade-item'>
-                    <h3>
-                        {' '}
-                        {data.start}&mdash;{data.end}{' '}
-                    </h3>
-                    <p> {data.title} </p>
-                    {data.product && (
+                <li class='work-item fade-item'>
+                    <div class='work-details flex-col'>
+                        <h3>
+                            {' '}
+                            {data.start}&mdash;{data.end}{' '}
+                        </h3>
+                        <p> {data.title} </p>
                         <p class='secondary'>
                             {' '}
-                            {data.company} &mdash; {data.product}{' '}
+                            @ {data.company} {!!data.product && <Fragment> &mdash; {data.product}</Fragment>}{' '}
                         </p>
+                    </div>
+                    {optimizedImages.length > 0 && (
+                        <div class='work-images flex'>
+                            {optimizedImages.map((src) => (
+                                <img src={src} alt={`${data.company} logo`} class='work-img' />
+                            ))}
+                        </div>
                     )}
-                    {!data.product && <p class='secondary'> {data.company} </p>}
                 </li>
             );
         })
@@ -37,8 +74,10 @@ const historyCollection = await getCollection('history');
         gap: var(--list-gap);
     }
 
-    ul.work-list li {
-        gap: 0.3rem;
+    ul.work-list li.work-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
         font-weight: var(--weight-light);
         position: relative;
         padding-left: 1.75rem;
@@ -65,6 +104,11 @@ const historyCollection = await getCollection('history');
         background: var(--line-color);
     }
 
+    .work-details {
+        gap: 0.3rem;
+        flex: 1;
+    }
+
     ul.work-list h3 {
         font-weight: var(--weight-medium);
         font-size: var(--text-sm);
@@ -78,5 +122,29 @@ const historyCollection = await getCollection('history');
     ul.work-list p.secondary {
         color: var(--color-muted);
         font-size: var(--text-sm);
+    }
+
+    .work-images {
+        display: flex;
+        gap: 1rem;
+        flex-shrink: 0;
+    }
+
+    .work-img {
+        height: 1.75rem;
+        width: auto;
+        max-width: 6rem;
+        object-fit: contain;
+    }
+
+    @media (max-width: 30em) {
+        ul.work-list li.work-item {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .work-images {
+            padding-top: 0.25rem;
+        }
     }
 </style>

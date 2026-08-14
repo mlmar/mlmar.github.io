@@ -17,8 +17,7 @@
         "product": "Consumer Insights",
         "company": "TransUnion",
         "images": [
-            "transunion.png",
-            "consumer-insights.png"
+            "consumer-insights.svg"
         ]
     },
     {
@@ -29,8 +28,7 @@
         "product": "OmniWatch",
         "company": "PeopleConnect",
         "images": [
-            "peopleconnect.png",
-            "omniwatch.png"
+            "omniwatch.svg"
         ]
     }
 ]

@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import soundcloudIcon from '../assets/soundcloud.webp';
 
 const tracks = await getCollection('music');
 ---
@@ -8,11 +9,24 @@ const tracks = await getCollection('music');
     {
         tracks.map(({ data }) => (
             <li class='track-card fade-item' data-src={data.src} data-title={data.title}>
-                <span class='track-title' aria-hidden='true'>
-                    {data.title}
-                </span>
-                <div class='sc-placeholder'>
-                    <div class='sc-skeleton' />
+                <div class='track-header'>
+                    <span class='track-title' aria-hidden='true'>
+                        {data.title}
+                    </span>
+                    <a
+                        href={data.url}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        class='soundcloud-link'
+                        aria-label={`Listen to ${data.title} on SoundCloud`}
+                    >
+                        <img src={soundcloudIcon.src} alt='SoundCloud logo' />
+                    </a>
+                </div>
+                <div class='audio-container'>
+                    <div class='audio-placeholder'>
+                        <div class='audio-skeleton' />
+                    </div>
                 </div>
             </li>
         ))
@@ -20,7 +34,7 @@ const tracks = await getCollection('music');
 </ul>
 
 <script>
-    // Lazy-load SoundCloud iframes via IntersectionObserver
+    // Lazy-load audio elements via IntersectionObserver
     const cards = document.querySelectorAll<HTMLLIElement>('.track-card[data-src]');
 
     const observer = new IntersectionObserver(
@@ -30,28 +44,31 @@ const tracks = await getCollection('music');
 
                 const card = entry.target as HTMLLIElement;
                 const src = card.dataset.src;
-                const placeholder = card.querySelector('.sc-placeholder');
-                if (!src || !placeholder) return;
+                const container = card.querySelector('.audio-container');
+                if (!src || !container) return;
 
-                const iframe = document.createElement('iframe');
-                iframe.src = src;
-                iframe.scrolling = 'no';
-                iframe.frameBorder = '0';
-                iframe.allow = 'autoplay';
-                iframe.className = 'sc-player';
-                iframe.title = card.dataset.title ?? 'SoundCloud track';
-                iframe.style.opacity = '0';
-                iframe.style.transition = 'opacity 0.5s ease';
+                const audio = document.createElement('audio');
+                audio.src = `/music/${src}.webm`;
+                audio.controls = true;
+                audio.className = 'audio-player flex';
+                audio.style.opacity = '0';
+                audio.style.transition = 'opacity 0.4s ease';
 
-                iframe.addEventListener('load', () => {
-                    // Remove skeleton, fade in iframe
-                    placeholder.querySelector('.sc-skeleton')?.remove();
-                    requestAnimationFrame(() => {
-                        iframe.style.opacity = '1';
-                    });
-                });
+                audio.addEventListener(
+                    'canplay',
+                    () => {
+                        const placeholder = container.querySelector('.audio-placeholder');
+                        if (placeholder) {
+                            placeholder.remove();
+                        }
+                        requestAnimationFrame(() => {
+                            audio.style.opacity = '1';
+                        });
+                    },
+                    { once: true },
+                );
 
-                placeholder.appendChild(iframe);
+                container.appendChild(audio);
                 observer.unobserve(card);
             });
         },
@@ -75,6 +92,13 @@ const tracks = await getCollection('music');
         gap: 0.5rem;
     }
 
+    .track-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.25rem;
+    }
+
     .track-title {
         font-size: var(--text-sm);
         font-weight: var(--weight-regular);
@@ -83,26 +107,54 @@ const tracks = await getCollection('music');
         text-transform: lowercase;
     }
 
-    .sc-placeholder {
+    .soundcloud-link {
+        display: flex;
+        align-items: center;
+        opacity: 0.6;
+        transition:
+            opacity var(--ease),
+            transform var(--ease);
+    }
+
+    .soundcloud-link:hover {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    .soundcloud-link img {
+        height: 1.1rem;
+        width: auto;
+        object-fit: contain;
+    }
+
+    .audio-container {
         width: 100%;
-        height: 166px;
-        border-radius: var(--radius-sm);
-        overflow: hidden;
         position: relative;
     }
 
-    .sc-skeleton {
+    .audio-placeholder {
         position: absolute;
         inset: 0;
-        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-        background-size: 200% 100%;
-        animation: shimmer 1.4s infinite;
-        border-radius: var(--radius-sm);
+        height: 100%;
+        background: #f5f5f5;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.05);
     }
 
-    :global(iframe) {
+    .audio-skeleton {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, #f5f5f5 25%, #e8e8e8 50%, #f5f5f5 75%);
+        background-size: 200% 100%;
+        animation: shimmer 1.4s infinite;
+    }
+
+    :global(.audio-player) {
         width: 100%;
-        height: 100%;
+        border-radius: var(--radius-md);
+        display: flex;
+        outline: none;
     }
 
     @keyframes shimmer {
@@ -114,17 +166,10 @@ const tracks = await getCollection('music');
         }
     }
 
-    .sc-player {
-        width: 100%;
-        height: 166px;
-        border: none;
-        border-radius: var(--radius-sm);
-        display: block;
-    }
-
     @media (max-width: 43.75em) {
         ul.music-grid {
             grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
     }
 </style>

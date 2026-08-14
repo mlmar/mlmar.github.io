@@ -3,24 +3,24 @@ const { title, description, uri, github, imgUri, imgPath, stack, compact = false
 ---
 
 <article class={'project fade-item' + (compact ? ' compact' : '')}>
-    <a class="img-wrapper" href={uri}>
-        <img src={imgUri || imgPath} alt={title + ' screenshot'} loading="lazy" />
-        <div class="img-overlay"></div>
+    <a class='img-wrapper' href={uri}>
+        <img src={imgUri || imgPath} alt={title + ' screenshot'} loading='lazy' />
+        <div class='img-overlay'></div>
     </a>
-    <div class="description">
+    <div class='description'>
         <h3>
-            <a class="project-title" href={uri} aria-label={`Visit ${title}`}>{title}</a>
-            {github && (
-                <a class="git-link" href={github} aria-label={`${title} on GitHub`}>
-                    <img src="/icons/github.webp" alt="" aria-hidden="true" />
-                </a>
-            )}
+            <a class='project-title' href={uri} aria-label={`Visit ${title}`}>{title}</a>
+            {
+                github && (
+                    <a class='git-link' href={github} aria-label={`${title} on GitHub`}>
+                        <img src='/icons/github.webp' alt='' aria-hidden='true' />
+                    </a>
+                )
+            }
         </h3>
-        {!compact && description && <p class="desc-text">{description}</p>}
+        {!compact && description && <p class='desc-text'>{description}</p>}
         <ul class={'stack-list' + (compact ? ' compact' : '')}>
-            {stack.map((s: string) => (
-                <li class="tag">{s}</li>
-            ))}
+            {stack.map((s: string) => <li class='tag'>{s}</li>)}
         </ul>
     </div>
 </article>
@@ -118,10 +118,10 @@ const { title, description, uri, github, imgUri, imgPath, stack, compact = false
     }
 
     .tag {
-        font-size: var(--text-sm);
+        font-size: var(--text-xs);
         font-weight: var(--weight-regular);
         padding: 0.2rem 0.55rem;
-        border: 1px solid rgba(0,0,0,0.12);
+        border: 1px solid rgba(0, 0, 0, 0.12);
         border-radius: 100px;
         color: var(--color-muted);
         white-space: nowrap;
