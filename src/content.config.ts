@@ -13,19 +13,16 @@ const history = defineCollection({
     })
 });
 
-// const projects = defineCollection({
-//     loader: file('./src/config/projects.json'),
-//     schema: z.object({
-//         title: z.string(),
-//         description: z.string(),
-//         github: z.string(),
-//         uri: z.string(),
-//         imgUri: z.string(),
-//         stack: z.array(z.string()),
-//     })
-// })
+const music = defineCollection({
+    loader: file('./src/config/music.json'),
+    schema: z.object({
+        id: z.string(),
+        src: z.string(),
+        title: z.string(),
+    })
+})
 
 export const collections = {
     history,
-    // projects
+    music
 }

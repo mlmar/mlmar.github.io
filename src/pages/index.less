@@ -29,11 +29,43 @@
     --medium: 1.8rem;
     --small: 1.2rem;
 
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
     --weight-bold: 700;
+
+    /* Type scale */
+    --text-sm: 1rem;
+    --text-md: 1.125rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+
+    /* Opacity (for non-text UI, e.g. icon states) */
+    --opacity-subtle: 0.35;
+
+    /* WCAG AA-compliant text colors (≥4.5:1 on #fff) */
+    --color-muted: #666666;
+    /* 5.74:1 — secondary body text */
+    --color-subtle: #767676;
+    /* 4.54:1 — labels, captions */
+
+    /* Letter spacing */
+    --tracking-wide: 0.12em;
+    --tracking-md: 0.06em;
+    --tracking-sm: 0.04em;
+
+    /* Border radius */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+
+    /* Transitions */
+    --ease: 0.2s ease;
 
     --padding: 2rem;
     --text-primary: #000000;
     --text-secondary: #3680ff;
+
+    --section-gap: 6rem;
 }
 
 * {
@@ -59,13 +91,38 @@ a[href] {
 }
 
 a {
-    transition: color 0.3s ease;
+    transition: color var(--ease);
 }
+
 a:hover {
     color: var(--text-secondary);
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 /* END DEFAULTS */
+
+/* Keyboard focus ring — visible only for keyboard navigation */
+:focus-visible {
+    outline: 2px solid var(--text-secondary);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* Suppress focus ring for mouse users */
+:focus:not(:focus-visible) {
+    outline: none;
+}
 
 .flex {
     display: flex;
@@ -80,5 +137,22 @@ a:hover {
     flex: 1 1 auto;
 }
 
+/* Per-item fade-up — triggered by IntersectionObserver in index.astro */
+.fade-item {
+    opacity: 0;
+    transform: translateY(1.2rem);
+    transition:
+        opacity 0.55s ease,
+        transform 0.55s ease;
+}
+
+.fade-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 @media (max-width: 43.75em) {
+    :root {
+        --section-gap: 4rem;
+    }
 }

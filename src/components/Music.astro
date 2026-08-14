@@ -1,0 +1,128 @@
+---
+import { getCollection } from 'astro:content';
+
+const tracks = await getCollection('music');
+---
+
+<ul class='music-grid' aria-label="Music tracks">
+    {
+        tracks.map(({ data }) => (
+            <li class='track-card fade-item' data-src={data.src} data-title={data.title}>
+                <span class='track-title' aria-hidden="true">{data.title}</span>
+                <div class='sc-placeholder'>
+                    <div class='sc-skeleton' />
+                </div>
+            </li>
+        ))
+    }
+</ul>
+
+<script>
+    // Lazy-load SoundCloud iframes via IntersectionObserver
+    const cards = document.querySelectorAll<HTMLLIElement>('.track-card[data-src]');
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+
+                const card = entry.target as HTMLLIElement;
+                const src = card.dataset.src;
+                const placeholder = card.querySelector('.sc-placeholder');
+                if (!src || !placeholder) return;
+
+                const iframe = document.createElement('iframe');
+                iframe.src = src;
+                iframe.scrolling = 'no';
+                iframe.frameBorder = '0';
+                iframe.allow = 'autoplay';
+                iframe.className = 'sc-player';
+                iframe.title = card.dataset.title ?? 'SoundCloud track';
+                iframe.style.opacity = '0';
+                iframe.style.transition = 'opacity 0.5s ease';
+
+                iframe.addEventListener('load', () => {
+                    // Remove skeleton, fade in iframe
+                    placeholder.querySelector('.sc-skeleton')?.remove();
+                    requestAnimationFrame(() => {
+                        iframe.style.opacity = '1';
+                    });
+                });
+
+                placeholder.appendChild(iframe);
+                observer.unobserve(card);
+            });
+        },
+        { threshold: 0.1, rootMargin: '100px' },
+    );
+
+    cards.forEach((card) => observer.observe(card));
+</script>
+
+<style>
+    ul.music-grid {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .track-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .track-title {
+        font-size: var(--text-sm);
+        font-weight: var(--weight-light);
+        letter-spacing: var(--tracking-sm);
+        color: var(--color-subtle);
+        text-transform: lowercase;
+    }
+
+    .sc-placeholder {
+        width: 100%;
+        height: 166px;
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        position: relative;
+    }
+
+    .sc-skeleton {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: shimmer 1.4s infinite;
+        border-radius: var(--radius-sm);
+    }
+
+    :global(iframe) {
+        width: 100%;
+        height: 100%;
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: 200% 0;
+        }
+        100% {
+            background-position: -200% 0;
+        }
+    }
+
+    .sc-player {
+        width: 100%;
+        height: 166px;
+        border: none;
+        border-radius: var(--radius-sm);
+        display: block;
+    }
+
+    @media (max-width: 43.75em) {
+        ul.music-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

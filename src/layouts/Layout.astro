@@ -1,31 +1,67 @@
 ---
 import '../pages/index.less';
 ---
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/icons/m.ico" />
-		<link rel="icon" href="/icons/m.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="decsription" content="mlmar.github.io" />
-		<title> Marcus Martinez </title>
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-	</head>
-	<body class="flex-col">
-		<main class="flex-col">
-			<slot />
-		</main>
-	</body>
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8' />
+        <meta name='viewport' content='width=device-width' />
+        <link rel='icon' type='image/svg+xml' href='/icons/m.ico' />
+        <link rel='icon' href='/icons/m.ico' />
+        <meta name='generator' content={Astro.generator} />
+        <meta
+            name='description'
+            content='Marcus Martinez — Frontend Software Engineer. Portfolio featuring work history, projects, and music.'
+        />
+        <title>Marcus Martinez</title>
+
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link
+            href='https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap'
+            rel='stylesheet'
+        />
+    </head>
+    <body class='flex-col'>
+        <a href='#main-content' class='skip-link sr-only'>Skip to main content</a>
+        <main id='main-content' class='flex-col'>
+            <slot />
+        </main>
+    </body>
 </html>
 
 <style>
-	main {
-		padding: var(--padding);
-		flex: 1;
-	}
+    .skip-link {
+        position: absolute;
+        top: -100%;
+        left: 1rem;
+        padding: 0.5rem 1rem;
+        background: var(--text-secondary);
+        color: #ffffff;
+        font-size: var(--text-sm);
+        font-weight: var(--weight-medium);
+        border-radius: var(--radius-sm);
+        z-index: 100;
+        transition: top var(--ease);
+    }
+
+    /* Reveal on focus for keyboard users */
+    .skip-link:focus {
+        top: 1rem;
+    }
+
+    main {
+        padding: 3rem 6rem;
+        flex: 1;
+        max-width: 900px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 43.75em) {
+        main {
+            padding: 2rem 1.5rem;
+        }
+    }
 </style>

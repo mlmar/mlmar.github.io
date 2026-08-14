@@ -1,20 +1,18 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "../layouts/Layout.astro";
-import BackButton from "../components/BackButton.astro";
 
 const historyCollection = await getCollection('history');
-
 ---
 
 <ul class="flex-col work-list">
     {
         historyCollection.map(({ data }) => {
             return (
-                <li class="flex-col">
-                    <h2> {data.start}&mdash;{data.end} </h2> 
+                <li class="flex-col fade-item">
+                    <h3> {data.start}&mdash;{data.end} </h3>
                     <p> {data.title} </p>
-                    <p> {!!data.product && `${data.product} |`}  {data.company} </p>
+                    {data.product && <p class="secondary"> {data.company} &mdash; {data.product} </p>}
+                    {!data.product && <p class="secondary"> {data.company} </p>}
                 </li>
             );
         })
@@ -23,43 +21,54 @@ const historyCollection = await getCollection('history');
 
 <style>
     ul.work-list {
-        --dot-size: 0.65rem;
-        --list-gap: 5rem;
+        --dot-size: 0.6rem;
+        --line-color: #d0d0d0;
+        --list-gap: 3rem;
 
         list-style: none;
         gap: var(--list-gap);
-
     }
 
     ul.work-list li {
-        gap: 0.35rem;
-        font-weight: 300;
+        gap: 0.3rem;
+        font-weight: var(--weight-light);
         position: relative;
-        padding-left: 2rem;
+        padding-left: 1.75rem;
     }
 
-    ul.work-list li:before {
-        content: ' ';
+    ul.work-list li::before {
+        content: '';
         position: absolute;
         width: var(--dot-size);
         height: var(--dot-size);
         border-radius: 100%;
         background: var(--text-secondary);
         left: 0;
-        top: var(--dot-size);
-    }
-    ul.work-list li:not(:last-child):after {
-        content: ' ';
-        position: absolute;
-        width: 0.1rem;
-        height: calc(75% + var(--list-gap));
-        left: calc(var(--dot-size) / 2);
-        top: calc(var(--dot-size) * 2);
-        background: black;
-        transform: translateX(-50%);
+        top: 0.45rem;
     }
 
-    ul.work-list h2 {
-        font-weight: 500;
+    ul.work-list li:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: calc(100% + var(--list-gap));
+        left: calc(var(--dot-size) / 2 - 0.5px);
+        top: calc(var(--dot-size) + 0.45rem);
+        background: var(--line-color);
+    }
+
+    ul.work-list h3 {
+        font-weight: var(--weight-medium);
+        font-size: var(--text-sm);
+    }
+
+    ul.work-list p {
+        font-size: var(--text-sm);
+        line-height: 1.5;
+    }
+
+    ul.work-list p.secondary {
+        color: var(--color-muted);
+        font-size: var(--text-sm);
     }
 </style>

@@ -12,23 +12,84 @@ type ProjectProps = {
     stack: string[];
     compact?: boolean;
 };
-
 ---
 
-<main class='projects'>
-    <section class="flex-col">
-        <h2> Side Projects </h2>
+<div class="projects-wrapper flex-col">
+    <div class="projects-grid primary-grid">
         {projects.primary.map((project: ProjectProps) => <Project {...project}/>)}
-    </section>
-    <section class="flex-col">
-        <h2> Mini Games </h2>
-        <div class='secondary-projects'>{projects.secondary.map((project: ProjectProps) => <Project {...project} compact/>)}</div>
-    </section>
+    </div>
 
-    <a class='repo' href={projects.portfolio.uri}>
-        <div class='img-wrapper'>
-            <img src='/icons/github.webp' alt='Github' />
+    <div class="secondary-section flex-col">
+        <h3 class="sub-label">mini</h3>
+        <div class="projects-grid secondary-grid">
+            {projects.secondary.map((project: ProjectProps) => <Project {...project} compact/>)}
         </div>
-        View the repo for this website
+    </div>
+
+    <a class="repo-link" href={projects.portfolio.uri}>
+        <img src="/icons/github.webp" alt="" aria-hidden="true" />
+        <span>view portfolio source</span>
     </a>
-</main>
+</div>
+
+<style>
+    .projects-wrapper {
+        gap: 3rem;
+    }
+
+    .projects-grid {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .primary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .secondary-section {
+        gap: 0.75rem;
+    }
+
+    .sub-label {
+        font-size: var(--text-sm);
+        font-weight: var(--weight-light);
+        letter-spacing: var(--tracking-md);
+        color: var(--color-subtle);
+        text-transform: lowercase;
+    }
+
+    .secondary-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .repo-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: var(--text-sm);
+        font-weight: var(--weight-light);
+        color: var(--color-muted);
+        transition: color var(--ease);
+        width: fit-content;
+    }
+
+    .repo-link:hover {
+        color: var(--text-secondary);
+    }
+
+    .repo-link img {
+        width: 1rem;
+        height: 1rem;
+        object-fit: contain;
+    }
+
+    @media (max-width: 43.75em) {
+        .primary-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .secondary-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>
