@@ -15,7 +15,7 @@ import about from '../config/about.json';
         <nav class='contact-links'>
             {
                 about.items.map((item) => (
-                    <a href={item.url} class='contact-item'>
+                    <a href={item.url} class='contact-item' aria-label={item.type}>
                         <img src={item.icon} alt='' aria-hidden='true' />
                         <span>{item.label}</span>
                     </a>

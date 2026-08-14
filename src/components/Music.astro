@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { getImage } from 'astro:assets';
+import { getImage, Image } from 'astro:assets';
 import soundcloudIcon from '../assets/soundcloud.webp';
 import playIcon from '../assets/play.svg';
 import pauseIcon from '../assets/pause.svg';
@@ -61,7 +61,7 @@ const optimizedTracks = await Promise.all(
                         class='soundcloud-link'
                         aria-label={`Listen to ${data.title} on SoundCloud`}
                     >
-                        <img src={soundcloudIcon.src} alt='SoundCloud logo' />
+                        <Image src={soundcloudIcon} alt='SoundCloud logo' />
                     </a>
                 </div>
                 <audio
