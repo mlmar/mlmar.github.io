@@ -1,110 +1,131 @@
-{
-    "primary": [
-        {
-            "title": "eli25",
-            "description": "Read daily AI generated summaries of science related news articles.",
-            "github": "https://github.com/mlmar/eli25",
-            "uri": "https://eli25.vercel.app",
-            "imgUri": "/images/eli25.webp",
-            "stack": [
-                "React",
-                "TypeScript",
-                "TanStack Query",
-                "TanStack Router",
-                "TailWind",
-                "Python",
-                "Hugging Face",
-                "FastAPI",
-                "PostgreSQL",
-                "Docker",
-                "GitHub Actions"
-            ]
-        },
-        {
-            "title": "Resume + Job Analyzer",
-            "description": "Compare your resume with job descriptions using GitHub Models (Experimental, requires token).",
-            "uri": "https://github.com/mlmar/resume-analyzer",
-            "github": "https://github.com/mlmar/resume-analyzer",
-            "imgUri": "/images/resume-extension.webp",
-            "stack": ["Vue", "WXT", "PDFJS", "GitHub Models API", "GitHub Actions", "Chrome Extension"]
-        },
-        {
-            "title": "Scientific Article Summarizer",
-            "description": "Upload a PDF and get concise, section by section summaries (GitHub Models rate limits may apply).",
-            "uri": "https://mlmar.github.io/summarizer",
-            "github": "https://github.com/mlmar/summarizer",
-            "imgUri": "/images/summarizer.webp",
-            "stack": [
-                "React",
-                "TypeScript",
-                "Shadcn",
-                "Node.js",
-                "Express",
-                "PDFJS",
-                "GitHub Models API",
-                "GitHub Actions",
-                "Google Cloud Run",
-                "Docker"
-            ]
-        },
-        {
-            "title": "Xordle",
-            "description": "Play Wordle against friends on a timer.",
-            "github": "https://github.com/mlmar/xordle",
-            "uri": "https://www.xordle.app",
-            "imgUri": "/images/xordle.webp",
-            "stack": ["React", "Node.js", "WebSocket", "Google Cloud Run", "Docker"]
-        },
-        {
-            "title": "tonedeaf",
-            "description": "Sign in with Spotify (or try the demo) to view your top artists/tracks and find new music.",
-            "github": "https://github.com/mlmar/tonedeaf",
-            "uri": "https://tonedeaf.vercel.app",
-            "imgUri": "/images/tonedeaf.webp",
-            "stack": ["React", "Vitest", "Zustand", "TanStack Query", "Node.js"]
-        },
-        {
-            "title": "News Map",
-            "description": "An interactive map for viewing real time global news from GDELT GEO 2.0 API.",
-            "github": "https://github.com/mlmar/newsmap",
-            "uri": "https://newsmap-sooty.vercel.app",
-            "imgUri": "/images/newsmap.webp",
-            "stack": ["Vue", "TypeScript", "Vue Leaflet", "Node.js", "Express"]
-        },
-
-        {
-            "title": "Avail",
-            "description": "Create a shared calendar where users can share their availability with others.",
-            "github": "https://github.com/mlmar/avail",
-            "uri": "https://avail.vercel.app",
-            "imgUri": "/images/avail.webp",
-            "stack": ["React", "Node.js", "MongoDB"]
-        }
-    ],
-    "secondary": [
-        {
-            "title": "orb",
-            "github": "https://github.com/mlmar/orb",
-            "uri": "https://mlmar.github.io/orb",
-            "imgUri": "/images/orb.webp",
-            "stack": ["js", "Node.js", "MongoDB"]
-        },
-        {
-            "title": "multiply",
-            "github": "https://github.com/mlmar/multiply",
-            "uri": "https://mlmar.github.io/multiply",
-            "imgUri": "/images/multiply.webp",
-            "stack": ["jQuery", "Node.js", "MongoDB"]
-        },
-        {
-            "title": "stop",
-            "github": "https://github.com/mlmar/stop",
-            "uri": "https://mlmar.github.io/stop",
-            "imgUri": "/images/stop.webp",
-            "stack": ["jQuery"]
-        }
-    ],
-    "portfolio": {
-        "uri": "https://github.com/mlmar/mlmar.github.io/tree/astro"
+[
+    {
+        "id": "xordle",
+        "title": "Xordle",
+        "description": "Play Wordle against friends on a timer.",
+        "github": "https://github.com/mlmar/xordle",
+        "uri": "https://www.xordle.app",
+        "image": "xordle.webp",
+        "stack": [
+            "React",
+            "Node.js",
+            "WebSocket",
+            "Google Cloud Run",
+            "Docker"
+        ],
+        "active": true,
+        "order": 1
+    },
+    {
+        "id": "eli25",
+        "title": "eli25",
+        "description": "Read daily AI generated summaries of science related news articles.",
+        "github": "https://github.com/mlmar/eli25",
+        "uri": "https://eli25.vercel.app",
+        "image": "eli25.webp",
+        "stack": [
+            "React",
+            "TypeScript",
+            "TanStack Query",
+            "TanStack Router",
+            "TailWind",
+            "Python",
+            "Hugging Face",
+            "FastAPI",
+            "PostgreSQL",
+            "Docker",
+            "GitHub Actions"
+        ],
+        "active": true,
+        "order": 2
+    },
+    {
+        "id": "resume-analyzer",
+        "title": "Resume Analyzer Extension",
+        "description": "Compare your resume with a job description using GitHub Models (Experimental, requires token).",
+        "uri": "https://github.com/mlmar/resume-analyzer",
+        "github": "https://github.com/mlmar/resume-analyzer",
+        "image": "resume-extension.webp",
+        "stack": [
+            "Vue",
+            "WXT",
+            "PDFJS",
+            "GitHub Models API",
+            "GitHub Actions",
+            "Chrome Extension"
+        ],
+        "active": true,
+        "order": 3
+    },
+    {
+        "id": "summarizer",
+        "title": "Scientific Article Summarizer",
+        "description": "Upload a PDF and get concise, section by section summaries (GitHub Models rate limits may apply).",
+        "uri": "https://mlmar.github.io/summarizer",
+        "github": "https://github.com/mlmar/summarizer",
+        "image": "summarizer.webp",
+        "stack": [
+            "React",
+            "TypeScript",
+            "Shadcn",
+            "Node.js",
+            "Express",
+            "PDFJS",
+            "GitHub Models API",
+            "GitHub Actions",
+            "Google Cloud Run",
+            "Docker"
+        ],
+        "active": false,
+        "order": 4
+    },
+    {
+        "id": "tonedeaf",
+        "title": "tonedeaf",
+        "description": "Sign in with Spotify (or try the demo) to view your top artists/tracks and find new music.",
+        "github": "https://github.com/mlmar/tonedeaf",
+        "uri": "https://tonedeaf.vercel.app",
+        "image": "tonedeaf.webp",
+        "stack": [
+            "React",
+            "Vitest",
+            "Zustand",
+            "TanStack Query",
+            "Node.js"
+        ],
+        "active": true,
+        "order": 5
+    },
+    {
+        "id": "newsmap",
+        "title": "News Map",
+        "description": "An interactive map for viewing real time global news from GDELT GEO 2.0 API.",
+        "github": "https://github.com/mlmar/newsmap",
+        "uri": "https://newsmap-sooty.vercel.app",
+        "image": "newsmap.webp",
+        "stack": [
+            "Vue",
+            "TypeScript",
+            "Vue Leaflet",
+            "Node.js",
+            "Express"
+        ],
+        "active": false,
+        "order": 6
+    },
+    {
+        "id": "avail",
+        "title": "Avail",
+        "description": "Create a shared calendar where users can share their availability with others.",
+        "github": "https://github.com/mlmar/avail",
+        "uri": "https://avail.vercel.app",
+        "image": "avail.webp",
+        "stack": [
+            "React",
+            "Node.js",
+            "MongoDB"
+        ],
+        "active": false,
+        "order": 7
     }
-}
+]

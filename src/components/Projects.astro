@@ -1,31 +1,42 @@
 ---
-import projects from '../config/projects.json';
+import { getCollection } from 'astro:content';
 import Project from './Project.astro';
+import { getImage } from 'astro:assets';
 
-type ProjectProps = {
-    title: string;
-    description?: string;
-    uri: string;
-    github?: string;
-    imgUri?: string;
-    imgPath?: string;
-    compact?: boolean;
-};
+const projectsCollection = await getCollection('projects');
+const activeProjects = projectsCollection
+    .filter((project) => project.data.active)
+    .sort((a, b) => a.data.order - b.data.order);
+
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/projects/*.{png,jpg,jpeg,webp}');
+
+const optimizedProjects = await Promise.all(
+    activeProjects.map(async ({ data }) => {
+        const imagePath = `../assets/projects/${data.image}`;
+        const imageGetter = images[imagePath];
+        if (!imageGetter) {
+            throw new Error(`Image not found: ${imagePath}`);
+        }
+        const imageModule = await imageGetter();
+        const optimizedImage = await getImage({
+            src: imageModule.default,
+            width: 661,
+            format: 'webp',
+        });
+        return {
+            ...data,
+            image: optimizedImage.src,
+        };
+    }),
+);
 ---
 
 <div class='projects-wrapper flex-col'>
     <div class='projects-grid primary-grid'>
-        {projects.primary.map((project: ProjectProps) => <Project {...project} />)}
+        {optimizedProjects.map((project) => <Project {...project} />)}
     </div>
 
-    <div class='secondary-section flex-col'>
-        <h3 class='sub-label'>mini</h3>
-        <div class='projects-grid secondary-grid'>
-            {projects.secondary.map((project: ProjectProps) => <Project {...project} compact />)}
-        </div>
-    </div>
-
-    <a class='repo-link' href={projects.portfolio.uri}>
+    <a class='repo-link' href='https://github.com/mlmar/mlmar.github.io/tree/astro'>
         <img src='/icons/github.webp' alt='' aria-hidden='true' />
         <span>view portfolio source</span>
     </a>
@@ -43,22 +54,6 @@ type ProjectProps = {
 
     .primary-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .secondary-section {
-        gap: 0.75rem;
-    }
-
-    .sub-label {
-        font-size: var(--text-sm);
-        font-weight: var(--weight-light);
-        letter-spacing: var(--tracking-md);
-        color: var(--color-subtle);
-        text-transform: lowercase;
-    }
-
-    .secondary-grid {
-        grid-template-columns: repeat(3, 1fr);
     }
 
     .repo-link {
@@ -85,10 +80,6 @@ type ProjectProps = {
     @media (max-width: 43.75em) {
         .primary-grid {
             grid-template-columns: 1fr;
-        }
-
-        .secondary-grid {
-            grid-template-columns: repeat(2, 1fr);
         }
     }
 </style>

@@ -3,11 +3,9 @@
         "id": "ucsd",
         "start": "2018",
         "end": "2021",
-        "title": "B.S. Cogntive Science",
+        "title": "B.S. Cognitive Science",
         "company": "UCSD",
-        "images": [
-            "ucsd.png"
-        ]
+        "image": "ucsd.png"
     },
     {
         "id": "tu",
@@ -16,9 +14,7 @@
         "title": "Software Engineer",
         "product": "Consumer Insights",
         "company": "TransUnion",
-        "images": [
-            "consumer-insights.svg"
-        ]
+        "image": "consumer-insights.svg"
     },
     {
         "id": "pc",
@@ -27,8 +23,6 @@
         "title": "Frontend Software Engineer",
         "product": "OmniWatch",
         "company": "PeopleConnect",
-        "images": [
-            "omniwatch.svg"
-        ]
+        "image": "omniwatch.svg"
     }
 ]

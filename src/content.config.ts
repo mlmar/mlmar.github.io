@@ -10,7 +10,7 @@ const history = defineCollection({
         title: z.string(),
         product: z.string().optional(),
         company: z.string(),
-        images: z.array(z.string()).optional()
+        image: z.string()
     })
 });
 
@@ -21,10 +21,27 @@ const music = defineCollection({
         src: z.string(),
         title: z.string(),
         url: z.string(),
+        image: z.string()
+    })
+})
+
+const projects = defineCollection({
+    loader: file('./src/config/projects.json'),
+    schema: z.object({
+        id: z.string(),
+        title: z.string(),
+        description: z.string().optional(),
+        github: z.string().optional(),
+        uri: z.string(),
+        image: z.string(),
+        stack: z.array(z.string()),
+        active: z.boolean(),
+        order: z.number()
     })
 })
 
 export const collections = {
     history,
-    music
+    music,
+    projects
 }

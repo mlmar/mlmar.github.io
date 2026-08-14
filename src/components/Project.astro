@@ -1,10 +1,10 @@
 ---
-const { title, description, uri, github, imgUri, imgPath, stack, compact = false } = Astro.props;
+const { title, description, uri, github, image, stack, compact = false } = Astro.props;
 ---
 
 <article class={'project fade-item' + (compact ? ' compact' : '')}>
     <a class='img-wrapper' href={uri}>
-        <img src={imgUri || imgPath} alt={title + ' screenshot'} loading='lazy' />
+        <img src={image} alt={title + ' screenshot'} width='661' height='372' loading='lazy' />
         <div class='img-overlay'></div>
     </a>
     <div class='description'>
