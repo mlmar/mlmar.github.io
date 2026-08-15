@@ -26,9 +26,6 @@
         "stack": [
             "React",
             "TypeScript",
-            "TanStack Query",
-            "TanStack Router",
-            "TailWind",
             "Python",
             "Hugging Face",
             "FastAPI",
@@ -42,7 +39,7 @@
     {
         "id": "resume-analyzer",
         "title": "Resume Analyzer Extension",
-        "description": "Compare your resume with a job description using GitHub Models (Experimental, requires token).",
+        "description": "Compare your resume with a job description using GitHub Models (Requires token).",
         "uri": "https://github.com/mlmar/resume-analyzer",
         "github": "https://github.com/mlmar/resume-analyzer",
         "image": "resume-extension.webp",
