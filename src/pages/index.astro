@@ -35,20 +35,6 @@ import Music from '../components/Music.astro';
 </Layout>
 
 <script>
-    // Intercept link clicks to prevent double-navigation
-    document.addEventListener(
-        'click',
-        (event) => {
-            const anchor = (event.target as HTMLElement).closest('a');
-            if (anchor && anchor.href) {
-                event.preventDefault();
-                event.stopImmediatePropagation();
-                window.location.href = anchor.href;
-            }
-        },
-        { capture: true },
-    );
-
     // Per-item IntersectionObserver — adds 'is-visible' with a small stagger
     // between items that enter the viewport in the same frame
     const items = document.querySelectorAll<HTMLElement>('.fade-item');
