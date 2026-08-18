@@ -38,7 +38,7 @@ const optimizedTracks = await Promise.all(
     {
         optimizedTracks.map(({ data, optimizedImageSrc }) => (
             <li class='track-card fade-item' data-src={data.src} data-title={data.title}>
-                <div class='album-cover-container'>
+                <div class='album-cover-container is-paused'>
                     <img
                         src={optimizedImageSrc}
                         alt={`Album cover for ${data.title}`}
@@ -115,32 +115,15 @@ const optimizedTracks = await Promise.all(
         playBtn.addEventListener('click', togglePlay);
 
         audio.addEventListener('play', () => {
-            // Sync states globally
-            document.querySelectorAll('.track-card').forEach((otherCard) => {
-                const otherAudio = otherCard.querySelector('.audio-element') as HTMLAudioElement;
-                const otherPlayIcon = otherCard.querySelector('.play-icon');
-                const otherPauseIcon = otherCard.querySelector('.pause-icon');
-
-                if (!otherAudio || !otherPlayIcon || !otherPauseIcon) return;
-
-                if (otherAudio === audio) {
-                    otherPlayIcon.classList.add('hidden');
-                    otherPauseIcon.classList.remove('hidden');
-                } else {
-                    otherPlayIcon.classList.remove('hidden');
-                    otherPauseIcon.classList.add('hidden');
-                }
-            });
+            coverContainer.classList.remove('is-paused');
         });
 
         audio.addEventListener('pause', () => {
-            playIcon.classList.remove('hidden');
-            pauseIcon.classList.add('hidden');
+            coverContainer.classList.add('is-paused');
         });
 
         audio.addEventListener('ended', () => {
-            playIcon.classList.remove('hidden');
-            pauseIcon.classList.add('hidden');
+            coverContainer.classList.remove('is-paused');
             hasPlayed.delete(audio);
         });
     });
@@ -168,6 +151,16 @@ const optimizedTracks = await Promise.all(
         border: 1px solid rgba(0, 0, 0, 0.05);
         cursor: pointer;
         background: #f5f5f5;
+    }
+
+    .album-cover-container.is-paused .play-overlay-btn .play-icon {
+        display: flex;
+    }
+    .album-cover-container.is-paused .play-overlay-btn .pause-icon {
+        display: none;
+    }
+    .album-cover-container:not(.is-paused) .play-overlay-btn .play-icon {
+        display: none;
     }
 
     .album-cover {
@@ -209,10 +202,6 @@ const optimizedTracks = await Promise.all(
         object-fit: contain;
     }
 
-    .play-overlay-btn .play-icon {
-        margin-left: 1px; /* Visual centering adjustment for play triangle */
-    }
-
     .track-header {
         display: flex;
         justify-content: space-between;
@@ -244,10 +233,6 @@ const optimizedTracks = await Promise.all(
         height: 1.2rem;
         width: auto;
         object-fit: contain;
-    }
-
-    .hidden {
-        display: none !important;
     }
 
     @media (max-width: 43.75em) {
