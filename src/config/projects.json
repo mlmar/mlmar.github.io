@@ -52,6 +52,23 @@
             "Chrome Extension"
         ],
         "active": true,
+        "order": 4
+    },
+    {
+        "id": "tonedeaf",
+        "title": "tonedeaf",
+        "description": "Sign in with Spotify (or try the demo) to view your top artists/tracks and find new music.",
+        "github": "https://github.com/mlmar/tonedeaf",
+        "uri": "https://tonedeaf.vercel.app",
+        "image": "tonedeaf.webp",
+        "stack": [
+            "React",
+            "Vitest",
+            "Zustand",
+            "TanStack Query",
+            "Node.js"
+        ],
+        "active": true,
         "order": 3
     },
     {
@@ -74,23 +91,6 @@
             "Docker"
         ],
         "active": false,
-        "order": 4
-    },
-    {
-        "id": "tonedeaf",
-        "title": "tonedeaf",
-        "description": "Sign in with Spotify (or try the demo) to view your top artists/tracks and find new music.",
-        "github": "https://github.com/mlmar/tonedeaf",
-        "uri": "https://tonedeaf.vercel.app",
-        "image": "tonedeaf.webp",
-        "stack": [
-            "React",
-            "Vitest",
-            "Zustand",
-            "TanStack Query",
-            "Node.js"
-        ],
-        "active": true,
         "order": 5
     },
     {
