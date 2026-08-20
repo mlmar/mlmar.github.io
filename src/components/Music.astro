@@ -37,7 +37,12 @@ const optimizedTracks = await Promise.all(
 <ul class='music-grid' aria-label='Music tracks'>
     {
         optimizedTracks.map(({ data, optimizedImageSrc }) => (
-            <li class='track-card fade-item' data-src={data.src} data-title={data.title}>
+            <li
+                class='track-card fade-item'
+                data-title={data.title}
+                data-src={`/music/${data.src}.webm`}
+                data-start-time={data.startTime}
+            >
                 <div class='album-cover-container is-paused'>
                     <img
                         src={optimizedImageSrc}
@@ -64,12 +69,6 @@ const optimizedTracks = await Promise.all(
                         <Image src={soundcloudIcon} alt='SoundCloud logo' />
                     </a>
                 </div>
-                <audio
-                    class='audio-element hidden'
-                    src={`/music/${data.src}.webm`}
-                    preload='none'
-                    data-start-time={data.startTime}
-                />
             </li>
         ))
     }
@@ -78,15 +77,14 @@ const optimizedTracks = await Promise.all(
 <script>
     const trackCards = document.querySelectorAll<HTMLLIElement>('.track-card');
     const hasPlayed: Map<HTMLAudioElement, boolean> = new Map();
+    const audioMap = new Map<HTMLLIElement, HTMLAudioElement>();
 
     trackCards.forEach((card) => {
-        const coverContainer = card.querySelector('.album-cover-container');
-        const audio = card.querySelector('.audio-element') as HTMLAudioElement;
-        const playBtn = card.querySelector('.play-overlay-btn');
-        const playIcon = card.querySelector('.play-icon');
-        const pauseIcon = card.querySelector('.pause-icon');
+        const coverContainer = card.querySelector('.album-cover-container') as HTMLDivElement;
+        const audio = new Audio();
+        const playBtn = card.querySelector('.play-overlay-btn') as HTMLButtonElement;
 
-        if (!audio || !coverContainer || !playBtn || !playIcon || !pauseIcon) return;
+        audioMap.set(card, audio);
 
         const togglePlay = (e: Event) => {
             // Prevent triggering multiple times if user clicks container and button
@@ -94,16 +92,16 @@ const optimizedTracks = await Promise.all(
 
             if (audio.paused) {
                 // Pause all other audio elements first
-                document.querySelectorAll('.audio-element').forEach((el) => {
-                    const otherAudio = el as HTMLAudioElement;
-                    if (otherAudio !== audio && !otherAudio.paused) {
-                        otherAudio.pause();
+                for (const [c, a] of audioMap.entries()) {
+                    if (a !== audio && !a.paused) {
+                        a.pause();
                     }
-                });
+                }
                 // if track is being played from scratch, set to start time
                 if (!hasPlayed.get(audio)) {
                     hasPlayed.set(audio, true);
-                    audio.currentTime = Number(audio.dataset.startTime);
+                    audio.src = card.dataset.src!;
+                    audio.currentTime = Number(card.dataset.startTime);
                 }
                 audio.play();
             } else {
@@ -123,7 +121,7 @@ const optimizedTracks = await Promise.all(
         });
 
         audio.addEventListener('ended', () => {
-            coverContainer.classList.remove('is-paused');
+            coverContainer.classList.add('is-paused');
             hasPlayed.delete(audio);
         });
     });
