@@ -1,10 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
-import { getImage, Image } from 'astro:assets';
-import soundcloudIcon from '../assets/soundcloud.webp';
-import playIcon from '../assets/play.svg';
-import pauseIcon from '../assets/pause.svg';
-
+import { getImage } from 'astro:assets';
+import Track from './Track.astro';
 import type { ImageMetadata } from 'astro';
 
 const tracks = await getCollection('music');
@@ -35,97 +32,8 @@ const optimizedTracks = await Promise.all(
 ---
 
 <ul class='music-grid' aria-label='Music tracks'>
-    {
-        optimizedTracks.map(({ data, optimizedImageSrc }) => (
-            <li
-                class='track-card fade-item'
-                data-title={data.title}
-                data-src={`/music/${data.src}.webm`}
-                data-start-time={data.startTime}
-            >
-                <div class='album-cover-container is-paused'>
-                    <img
-                        src={optimizedImageSrc}
-                        alt={`Album cover for ${data.title}`}
-                        class='album-cover'
-                        loading='lazy'
-                    />
-                    <button class='play-overlay-btn' aria-label={`Play ${data.title}`}>
-                        <img class='play-icon' src={playIcon.src} alt='Play' />
-                        <img class='pause-icon hidden' src={pauseIcon.src} alt='Pause' />
-                    </button>
-                </div>
-                <div class='track-header'>
-                    <span class='track-title' aria-hidden='true'>
-                        {data.title}
-                    </span>
-                    <a
-                        href={data.url}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        class='soundcloud-link'
-                        aria-label={`Listen to ${data.title} on SoundCloud`}
-                    >
-                        <Image src={soundcloudIcon} alt='SoundCloud logo' />
-                    </a>
-                </div>
-            </li>
-        ))
-    }
+    {optimizedTracks.map(({ data, optimizedImageSrc }) => <Track data={data} optimizedImageSrc={optimizedImageSrc} />)}
 </ul>
-
-<script>
-    const trackCards = document.querySelectorAll<HTMLLIElement>('.track-card');
-    const hasPlayed: Map<HTMLAudioElement, boolean> = new Map();
-    const audioMap = new Map<HTMLLIElement, HTMLAudioElement>();
-
-    trackCards.forEach((card) => {
-        const coverContainer = card.querySelector('.album-cover-container') as HTMLDivElement;
-        const audio = new Audio();
-        const playBtn = card.querySelector('.play-overlay-btn') as HTMLButtonElement;
-
-        audioMap.set(card, audio);
-
-        const togglePlay = (e: Event) => {
-            // Prevent triggering multiple times if user clicks container and button
-            e.stopPropagation();
-
-            if (audio.paused) {
-                // Pause all other audio elements first
-                for (const [c, a] of audioMap.entries()) {
-                    if (a !== audio && !a.paused) {
-                        a.pause();
-                    }
-                }
-                // if track is being played from scratch, set to start time
-                if (!hasPlayed.get(audio)) {
-                    hasPlayed.set(audio, true);
-                    audio.src = card.dataset.src!;
-                    audio.currentTime = Number(card.dataset.startTime);
-                }
-                audio.play();
-            } else {
-                audio.pause();
-            }
-        };
-
-        coverContainer.addEventListener('click', togglePlay);
-        playBtn.addEventListener('click', togglePlay);
-
-        audio.addEventListener('play', () => {
-            coverContainer.classList.remove('is-paused');
-        });
-
-        audio.addEventListener('pause', () => {
-            coverContainer.classList.add('is-paused');
-        });
-
-        audio.addEventListener('ended', () => {
-            coverContainer.classList.add('is-paused');
-            hasPlayed.delete(audio);
-        });
-    });
-</script>
 
 <style>
     ul.music-grid {
@@ -133,104 +41,6 @@ const optimizedTracks = await Promise.all(
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
-    }
-
-    .track-card {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    .album-cover-container {
-        position: relative;
-        aspect-ratio: 1 / 1;
-        overflow: hidden;
-        border-radius: var(--radius-md);
-        border: 1px solid rgba(0, 0, 0, 0.05);
-        cursor: pointer;
-        background: #f5f5f5;
-    }
-
-    .album-cover-container.is-paused .play-overlay-btn .play-icon {
-        display: flex;
-    }
-    .album-cover-container.is-paused .play-overlay-btn .pause-icon {
-        display: none;
-    }
-    .album-cover-container:not(.is-paused) .play-overlay-btn .play-icon {
-        display: none;
-    }
-
-    .album-cover {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.4s ease;
-    }
-
-    .album-cover-container:hover .album-cover {
-        transform: scale(var(--scale));
-    }
-
-    .play-overlay-btn {
-        position: absolute;
-        bottom: 1rem;
-        left: 1rem;
-        width: 2.75rem;
-        height: 2.75rem;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.9);
-        border: none;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: background-color 0.2s ease;
-        z-index: 2;
-    }
-
-    .play-overlay-btn:hover {
-        background: #ffffff;
-    }
-
-    .play-overlay-btn img {
-        width: 1rem;
-        height: 1rem;
-        object-fit: contain;
-    }
-
-    .track-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 0.25rem;
-    }
-
-    .track-title {
-        font-size: var(--text-sm);
-        font-weight: var(--weight-regular);
-        letter-spacing: var(--tracking-sm);
-        color: var(--color-subtle);
-        text-transform: lowercase;
-    }
-
-    .soundcloud-link {
-        display: flex;
-        align-items: center;
-        transition:
-            opacity var(--ease),
-            transform var(--ease);
-    }
-
-    .soundcloud-link:hover {
-        transform: scale(var(--scale));
-    }
-
-    .soundcloud-link img {
-        height: 1.2rem;
-        width: auto;
-        object-fit: contain;
     }
 
     @media (max-width: 43.75em) {
