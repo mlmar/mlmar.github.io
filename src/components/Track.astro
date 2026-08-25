@@ -224,17 +224,12 @@ const { data, optimizedImageSrc } = Astro.props;
         --track-thumb-size: 0.75rem;
         -webkit-appearance: none;
         appearance: none;
-        background: linear-gradient(
-            to right,
-            #ffffff 0%,
-            #ffffff var(--percent, 0%),
-            rgba(255, 255, 255, 0.8) var(--percent, 0%),
-            rgba(255, 255, 255, 0.8) 100%
-        );
+        background: transparent;
         cursor: pointer;
         display: flex;
+        align-items: center;
         position: absolute;
-        bottom: 2rem;
+        bottom: 1.6rem;
         left: 4.5rem;
         right: 1rem;
         opacity: 1;
@@ -244,27 +239,39 @@ const { data, optimizedImageSrc } = Astro.props;
             opacity 0.2s ease,
             content-visibility 0.2s ease;
         z-index: 3;
+        height: 1.5rem;
+    }
+
+    .album-cover-container input[type='range']::-webkit-slider-runnable-track {
+        background: linear-gradient(
+            to right,
+            #ffffff 0%,
+            #ffffff var(--percent, 0%),
+            rgba(255, 255, 255, 0.8) var(--percent, 0%),
+            rgba(255, 255, 255, 0.8) 100%
+        );
         height: var(--track-height);
         border-radius: 3px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
-    .album-cover-container input[type='range']::-webkit-slider-runnable-track {
-        background: transparent;
-        height: var(--track-height);
-        border-radius: 3px;
-    }
-
     .album-cover-container input[type='range']::-moz-range-track {
-        background: transparent;
+        background: linear-gradient(
+            to right,
+            #ffffff 0%,
+            #ffffff var(--percent, 0%),
+            rgba(255, 255, 255, 0.8) var(--percent, 0%),
+            rgba(255, 255, 255, 0.8) 100%
+        );
         height: var(--track-height);
         border-radius: 3px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
     .album-cover-container input[type='range']::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
-        margin-top: -3px;
+        margin-top: calc((var(--track-height) - var(--track-thumb-size)) / 2);
         background-color: #ffffff;
         height: var(--track-thumb-size);
         width: var(--track-thumb-size);
