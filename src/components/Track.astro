@@ -176,19 +176,6 @@ const { data, optimizedImageSrc } = Astro.props;
             updateSliderFill();
         });
 
-        // Preload track source when the card enters the viewport
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        loadAudio();
-                        observer.unobserve(card);
-                    }
-                });
-            },
-            { threshold: 0.01 },
-        );
-        observer.observe(card);
     });
 </script>
 
