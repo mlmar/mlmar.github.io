@@ -98,7 +98,7 @@ const { data, optimizedImageSrc } = Astro.props;
         // Bind play triggers
         coverContainer.addEventListener('click', togglePlay);
         coverContainer.addEventListener('keydown', (e) => {
-            if (e.key === ' ' || e.key === 'Spacebar') {
+            if (e.key === ' ' || e.code === 'Space' || e.key === 'Spacebar' || e.key === 'Enter') {
                 e.preventDefault();
                 togglePlay(e);
             }
