@@ -14,7 +14,7 @@ const optimizedItems = await Promise.all(
         const imageModule = await imageGetter();
         return {
             ...item,
-            icon: (await getImage({ src: imageModule.default, width: 16, height: 16, format: 'webp' })).src as string,
+            icon: (await getImage({ src: imageModule.default, width: 32, height: 32, format: 'webp' })).src as string,
         };
     }),
 );
@@ -57,5 +57,21 @@ const optimizedItems = await Promise.all(
         width: 1rem;
         height: 1rem;
         object-fit: contain;
+    }
+
+    @media (max-width: 43.75em) {
+        .contact-links {
+            flex-direction: row;
+            gap: 0.75rem 1.25rem;
+        }
+
+        .contact-item img {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .contact-item span {
+            display: none;
+        }
     }
 </style>

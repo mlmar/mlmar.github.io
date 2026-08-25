@@ -76,6 +76,9 @@ const { data, optimizedImageSrc } = Astro.props;
 
         // Handle toggling play/pause state
         const togglePlay = (e: Event) => {
+            if (e.target === range) {
+                return;
+            }
             e.stopPropagation();
 
             if (audio.paused) {
