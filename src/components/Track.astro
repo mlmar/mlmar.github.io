@@ -209,6 +209,13 @@ const { data, optimizedImageSrc } = Astro.props;
         background: #f5f5f5;
     }
 
+    .album-cover-container:focus,
+    .album-cover-container:focus-visible,
+    .play-overlay-btn:focus,
+    .play-overlay-btn:focus-visible {
+        outline: none;
+    }
+
     .album-cover-container.is-paused .play-overlay-btn .play-icon {
         display: flex;
     }
