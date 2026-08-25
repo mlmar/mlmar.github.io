@@ -117,17 +117,6 @@ a:hover {
 
 /* END DEFAULTS */
 
-/* Keyboard focus ring — visible only for keyboard navigation */
-:focus-visible {
-    outline: 2px solid var(--color-secondary);
-    outline-offset: 3px;
-    border-radius: 2px;
-}
-
-/* Suppress focus ring for mouse users */
-:focus:not(:focus-visible) {
-    outline: none;
-}
 
 .flex {
     display: flex;
@@ -159,5 +148,55 @@ a:hover {
 @media (max-width: 43.75em) {
     :root {
         --section-gap: 4rem;
+    }
+}
+
+/* Shared Portfolio & Hero Styles */
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: var(--section-gap);
+}
+
+h1 {
+    font-size: var(--spacing-xl);
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-left: -0.1rem;
+}
+
+.portfolio-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: var(--section-gap);
+}
+
+.section-label {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-regular);
+    letter-spacing: var(--tracking-lg);
+    color: var(--color-subtle);
+}
+
+/* Prevent fade-item from resetting color after animation */
+.section-label.is-visible {
+    color: var(--color-subtle);
+}
+
+@media (max-width: 43.75em) {
+    .contact-links {
+        gap: 0.75rem 1.25rem;
+    }
+
+    .contact-item img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .contact-item span {
+        display: none;
     }
 }

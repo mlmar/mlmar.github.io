@@ -23,7 +23,7 @@ const { data, optimizedImageSrc } = Astro.props;
     data-src={`/music/${data.src}.webm`}
     data-start-time={data.startTime}
 >
-    <div class='album-cover-container is-paused'>
+    <div class='album-cover-container is-paused' tabindex='0'>
         <img src={optimizedImageSrc} alt={`Album cover for ${data.title}`} class='album-cover' loading='lazy' />
         <button class='play-overlay-btn' aria-label={`Play ${data.title}`}>
             <img class='play-icon' src={playIcon.src} alt='Play' />
@@ -94,6 +94,12 @@ const { data, optimizedImageSrc } = Astro.props;
 
         // Bind play triggers
         coverContainer.addEventListener('click', togglePlay);
+        coverContainer.addEventListener('keydown', (e) => {
+            if (e.key === ' ' || e.key === 'Spacebar') {
+                e.preventDefault();
+                togglePlay(e);
+            }
+        });
         playBtn.addEventListener('click', togglePlay);
 
         // Flag to prevent updates to slider position during user interaction

@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Music from '../components/Music.astro';
+---
+
+<Layout>
+    <!-- Creative / Music -->
+    <section class='portfolio-section'>
+        <h2 id='creative' class='section-label fade-item'>creative</h2>
+        <Music />
+    </section>
+</Layout>
+
+<script>
+    import { initFadeIn } from '../scripts/fadeIn';
+    initFadeIn();
+</script>
