@@ -1,0 +1,1 @@
+function e(){let e=document.querySelectorAll(`.fade-item`),t=new IntersectionObserver(e=>{e.filter(e=>e.isIntersecting).forEach((e,n)=>{let r=e.target;setTimeout(()=>{r.classList.add(`is-visible`)},n*80),t.unobserve(r)})},{threshold:.02});e.forEach(e=>t.observe(e))}export{e as t};
