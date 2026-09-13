@@ -51,7 +51,7 @@
             "GitHub Actions",
             "Chrome Extension"
         ],
-        "active": true,
+        "active": false,
         "order": 4
     },
     {
